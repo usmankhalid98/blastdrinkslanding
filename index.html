@@ -73,26 +73,11 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--text);
-            letter-spacing: 1px;
-            font-style: italic;
-            text-shadow: 2px 2px 0 rgba(0,0,0,0.08);
-            -webkit-text-stroke: 0.5px var(--text);
-            paint-order: stroke fill;
+        .logo svg {
+            height: 32px;
+            width: auto;
+            display: block;
         }
-
-        .logo span {
-            display: inline-block;
-        }
-
-        .logo .b { transform: rotate(-8deg) scale(1.1); }
-        .logo .l { transform: rotate(-4deg) scale(1.05); margin-left: -2px; }
-        .logo .a { transform: rotate(2deg) scale(1.08); margin-left: -1px; }
-        .logo .s { transform: rotate(5deg) scale(1.05); margin-left: -1px; }
-        .logo .t { transform: rotate(8deg) scale(1.1); margin-left: -2px; }
 
         .nav-cta {
             background: var(--text);
@@ -645,7 +630,7 @@
     <!-- Nav -->
     <nav class="nav">
         <div class="container">
-            <div class="logo"><span class="b">B</span><span class="l">L</span><span class="a">A</span><span class="s">S</span><span class="t">T</span></div>
+            <div class="logo"><svg viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg"><text x="10" y="62" font-family="'Arial Rounded MT Bold','Nunito','Verdana',sans-serif" font-size="68" font-weight="900" font-style="italic" fill="#2a2430" stroke="#2a2430" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">BLAST</text></svg></div>
             <a href="#preorder" class="nav-cta">Stock Blast</a>
         </div>
     </nav>
