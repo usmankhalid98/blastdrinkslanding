@@ -884,9 +884,12 @@
                         </select>
                     </div>
                     <div class="form-submit">
-                        <button type="submit" class="btn-submit">Submit Pre-Order</button>
+                        <a href="https://wise.com/pay/r/rTc6o-XYKf-8XBw" target="_blank" class="btn-submit" id="payBtn" style="text-decoration:none; text-align:center;">Make Payment</a>
                     </div>
-                    <p class="form-note">We'll be in touch to confirm your order, arrange payment, and organise delivery.</p>
+                    <div class="form-submit" style="margin-top:12px;">
+                        <button type="submit" class="btn-submit" id="submitBtn" disabled style="opacity:0.5; cursor:not-allowed;">Submit Pre-Order</button>
+                    </div>
+                    <p class="form-note">Click "Make Payment" first, then "Submit Pre-Order" to confirm your order via WhatsApp.</p>
                 </form>
             </div>
         </div>
@@ -916,8 +919,23 @@
             });
         });
 
+        var paymentClicked = false;
+        var submitBtn = document.getElementById('submitBtn');
+        var payBtn = document.getElementById('payBtn');
+
+        payBtn.addEventListener('click', function() {
+            paymentClicked = true;
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.style.cursor = 'pointer';
+            payBtn.textContent = 'Payment Opened';
+            payBtn.style.background = '#6b7a4e';
+        });
+
         document.getElementById('preorderForm').addEventListener('submit', function(e) {
             e.preventDefault();
+
+            if (!paymentClicked) return;
 
             var firstName = document.getElementById('firstName').value;
             var lastName = document.getElementById('lastName').value;
@@ -928,14 +946,21 @@
             var postcode = document.getElementById('postcode').value;
             var quantity = document.getElementById('quantity').value;
 
-            var message = 'New Blast Drinks Pre-Order%0A%0A'
-                + 'Name: ' + encodeURIComponent(firstName + ' ' + lastName) + '%0A'
-                + 'Email: ' + encodeURIComponent(email) + '%0A'
-                + 'Phone: ' + encodeURIComponent(phone) + '%0A'
-                + 'Address: ' + encodeURIComponent(address + ', ' + city + ', ' + postcode) + '%0A'
-                + 'Quantity: ' + encodeURIComponent(quantity) + ' bottles';
+            var message = encodeURIComponent(
+                'New Blast Drinks Pre-Order\n\n'
+                + 'Name: ' + firstName + ' ' + lastName + '\n'
+                + 'Email: ' + email + '\n'
+                + 'Phone: ' + phone + '\n'
+                + 'Address: ' + address + ', ' + city + ', ' + postcode + '\n'
+                + 'Quantity: ' + quantity + ' bottles\n\n'
+                + 'Payment has been made via Wise.'
+            );
 
             window.open('https://wa.me/447508804298?text=' + message, '_blank');
+
+            submitBtn.textContent = 'Pre-Order Sent!';
+            submitBtn.style.background = '#6b7a4e';
+            submitBtn.disabled = true;
         });
 
         const observer = new IntersectionObserver((entries) => {
