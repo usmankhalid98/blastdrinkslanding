@@ -919,23 +919,24 @@
             });
         });
 
-        var paymentClicked = false;
         var submitBtn = document.getElementById('submitBtn');
         var payBtn = document.getElementById('payBtn');
+        var params = new URLSearchParams(window.location.search);
+        var paymentComplete = params.has('payment') && params.get('payment') === 'success';
 
-        payBtn.addEventListener('click', function() {
-            paymentClicked = true;
+        if (paymentComplete) {
             submitBtn.disabled = false;
             submitBtn.style.opacity = '1';
             submitBtn.style.cursor = 'pointer';
-            payBtn.textContent = 'Payment Opened — Complete on Stripe';
+            payBtn.textContent = 'Payment Complete';
             payBtn.style.background = '#6b7a4e';
-        });
+            payBtn.style.pointerEvents = 'none';
+        }
 
         document.getElementById('preorderForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            if (!paymentClicked) return;
+            if (!paymentComplete) return;
 
             var firstName = document.getElementById('firstName').value;
             var lastName = document.getElementById('lastName').value;
