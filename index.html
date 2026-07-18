@@ -159,51 +159,11 @@
             cursor: pointer;
         }
 
-        .video-wrapper video {
+        .video-wrapper iframe {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            border: none;
             display: block;
-        }
-
-        .video-placeholder {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--pink-light), var(--lavender-light), var(--green-light));
-        }
-
-        .play-btn {
-            width: 76px;
-            height: 76px;
-            background: var(--text);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 14px;
-            transition: all 0.3s;
-            box-shadow: 0 6px 30px rgba(0,0,0,0.15);
-        }
-
-        .play-btn:hover {
-            transform: scale(1.08);
-        }
-
-        .play-btn svg {
-            width: 26px;
-            height: 26px;
-            fill: white;
-            margin-left: 3px;
-        }
-
-        .video-placeholder p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-weight: 500;
         }
 
         /* About / Intro Section */
@@ -625,16 +585,8 @@
     <!-- Video Section -->
     <section class="video-section">
         <div class="container">
-            <div class="video-wrapper animate delay-3" id="videoWrapper">
-                <div class="video-placeholder" id="videoPlaceholder">
-                    <div class="play-btn">
-                        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-                    </div>
-                    <p>Watch the Blast Drinks story</p>
-                </div>
-                <video id="heroVideo" preload="none" playsinline>
-                    <source src="" type="video/mp4">
-                </video>
+            <div class="video-wrapper animate delay-3">
+                <iframe src="https://next.frame.io/share/aaa610e4-d823-42f3-aa74-2fcb491b83b5/view/9a87b9da-77db-4275-8626-7d98ea8906b5" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -824,18 +776,6 @@
     </footer>
 
     <script>
-        const videoWrapper = document.getElementById('videoWrapper');
-        const videoPlaceholder = document.getElementById('videoPlaceholder');
-        const heroVideo = document.getElementById('heroVideo');
-
-        videoWrapper.addEventListener('click', function() {
-            const src = heroVideo.querySelector('source').getAttribute('src');
-            if (src) {
-                videoPlaceholder.style.display = 'none';
-                heroVideo.play();
-            }
-        });
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
