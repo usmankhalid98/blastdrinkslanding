@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blast Drinks | Fuel Your Fire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00e5ff;
+            --primary-dark: #00b8d4;
+            --accent: #ff3d00;
+            --accent-light: #ff6e40;
+            --dark: #0a0a0a;
+            --dark-surface: #141414;
+            --dark-card: #1a1a1a;
+            --text: #ffffff;
+            --text-muted: #b0b0b0;
+            --gradient: linear-gradient(135deg, #00e5ff, #7c4dff);
+            --glow: 0 0 30px rgba(0, 229, 255, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+            padding: 15px 0;
+        }
+
+        .nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-light);
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 20px 0 80px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--glow);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            aspect-ratio: 16/9;
+            background: var(--dark-card);
+            cursor: pointer;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(10,10,10,0.9));
+        }
+
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            transition: all 0.3s;
+            box-shadow: 0 0 40px rgba(255, 61, 0, 0.4);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 60px rgba(255, 61, 0, 0.6);
+        }
+
+        .play-btn svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            margin-left: 4px;
+        }
+
+        .video-placeholder p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Social Proof Bar */
+        .social-proof {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+
+        .proof-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .proof-stat {
+            text-align: center;
+        }
+
+        .proof-stat .number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .proof-stat .label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 36px;
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            border-color: rgba(0, 229, 255, 0.3);
+            transform: translateY(-4px);
+            box-shadow: var(--glow);
+        }
+
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(0, 229, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background: var(--dark-surface);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            border-color: rgba(0, 229, 255, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .product-image {
+            width: 120px;
+            height: 200px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(124, 77, 255, 0.2));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .product-card .flavor {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .product-card .description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: var(--glow);
+            transform: scale(1.03);
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .price-note {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        /* CTA Buttons */
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(255, 61, 0, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 14px 38px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 229, 255, 0.1);
+            transform: scale(1.02);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--dark-surface);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .testimonial-card .stars {
+            color: #ffd600;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card .quote {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-card .role {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Sign Up / Form Section */
+        .signup {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .signup::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .signup-box {
+            max-width: 560px;
+            margin: 0 auto;
+            background: var(--dark-card);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            border-radius: 24px;
+            padding: 50px 40px;
+            box-shadow: var(--glow);
+            position: relative;
+        }
+
+        .signup-box h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .signup-box .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-submit {
+            margin-top: 30px;
+        }
+
+        .form-submit .btn-primary {
+            padding: 18px;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .form-guarantee {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .form-guarantee svg {
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        /* Urgency Banner */
+        .urgency {
+            background: linear-gradient(90deg, var(--accent), #ff6f00);
+            text-align: center;
+            padding: 14px 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .urgency span {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .proof-stats {
+                gap: 30px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .signup-box {
+                padding: 30px 24px;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .benefits-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Urgency Banner -->
+    <div class="urgency">
+        <span>LIMITED TIME OFFER — Get 20% OFF your first order. Use code: BLAST20</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">BLAST</div>
+            <a href="#signup" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge animate">Now Available Nationwide</div>
+            <h1 class="animate delay-1">The Drink That<br><span>Fuels Champions</span></h1>
+            <p class="hero-sub animate delay-2">Watch how Blast Drinks is changing the game. Clean energy, bold flavours, zero compromise.</p>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-wrapper animate delay-3" id="videoWrapper">
+                <div class="video-placeholder" id="videoPlaceholder">
+                    <div class="play-btn">
+                        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                    </div>
+                    <p>Watch the Blast Drinks story</p>
+                </div>
+                <video id="heroVideo" preload="none" playsinline>
+                    <source src="" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="proof-stats">
+                <div class="proof-stat">
+                    <div class="number">50K+</div>
+                    <div class="label">Happy Customers</div>
+                </div>
+                <div class="proof-stat">
+                    <div class="number">4.9/5</div>
+                    <div class="label">Average Rating</div>
+                </div>
+                <div class="proof-stat">
+                    <div class="number">100%</div>
+                    <div class="label">Natural Ingredients</div>
+                </div>
+                <div class="proof-stat">
+                    <div class="number">0g</div>
+                    <div class="label">Added Sugar</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why People Choose Blast</h2>
+                <p>Engineered for performance. Designed for taste.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#9889;</div>
+                    <h3>Clean Energy</h3>
+                    <p>Sustained energy without the crash. Powered by natural caffeine and B-vitamins for all-day focus.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#127811;</div>
+                    <h3>Natural Ingredients</h3>
+                    <p>No artificial colours, no preservatives. Just real ingredients that taste amazing and fuel your body right.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#128170;</div>
+                    <h3>Performance Driven</h3>
+                    <p>Whether you're in the gym, at work, or gaming — Blast gives you the edge when it matters most.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#127942;</div>
+                    <h3>Bold Flavours</h3>
+                    <p>From Tropical Surge to Arctic Berry, every sip is an experience. No bland, watered-down energy here.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#10084;&#65039;</div>
+                    <h3>Zero Sugar</h3>
+                    <p>All the taste, none of the guilt. Blast delivers flavour without the sugar spike.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#128640;</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Order today, get it tomorrow. Free shipping on all orders over £30. Subscribe and save even more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Range</h2>
+                <p>Find your flavour. Every can packs a punch.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">&#127818;</div>
+                    <h3>Tropical Surge</h3>
+                    <div class="flavor">Mango & Passionfruit</div>
+                    <p class="description">A tropical explosion that hits different. Sweet, tangy, and loaded with energy.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#129744;</div>
+                    <h3>Arctic Berry</h3>
+                    <div class="flavor">Blueberry & Ice</div>
+                    <p class="description">Cool, refreshing, and packed with antioxidants. Your new go-to for focus.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">&#127819;</div>
+                    <h3>Citrus Blast</h3>
+                    <div class="flavor">Lemon & Lime</div>
+                    <p class="description">The original. Sharp citrus with a smooth finish that keeps you coming back.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What People Are Saying</h2>
+                <p>Join thousands who've made the switch to Blast.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="quote">"I've tried every energy drink out there. Blast is the only one that gives me clean energy without the jitters or crash. Absolutely hooked."</p>
+                    <div class="author">Jake T.</div>
+                    <div class="role">Personal Trainer</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="quote">"The Tropical Surge flavour is unreal. Tastes like a holiday in a can. And zero sugar? Sign me up for the subscription."</p>
+                    <div class="author">Sarah M.</div>
+                    <div class="role">Content Creator</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="quote">"Been drinking Blast before every session for 3 months. My focus and endurance are through the roof. This stuff actually works."</p>
+                    <div class="author">Marcus R.</div>
+                    <div class="role">Semi-Pro Footballer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Pack</h2>
+                <p>Subscribe monthly or grab a one-time order. Cancel anytime.</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Starter Pack</h3>
+                    <p class="subtitle">Try the range</p>
+                    <div class="price">£19.99 <span>/one-time</span></div>
+                    <p class="price-note">6 cans - mixed flavours</p>
+                    <ul class="pricing-features">
+                        <li>6 cans (2 of each flavour)</li>
+                        <li>Free shipping</li>
+                        <li>Perfect for first-timers</li>
+                    </ul>
+                    <a href="#signup" class="btn-secondary">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Monthly Box</h3>
+                    <p class="subtitle">Never run out</p>
+                    <div class="price">£29.99 <span>/month</span></div>
+                    <p class="price-note">12 cans delivered monthly</p>
+                    <ul class="pricing-features">
+                        <li>12 cans per month</li>
+                        <li>Choose your flavours</li>
+                        <li>Free shipping always</li>
+                        <li>Cancel anytime</li>
+                        <li>Exclusive subscriber discounts</li>
+                    </ul>
+                    <a href="#signup" class="btn-primary">Subscribe Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign Up Section -->
+    <section class="signup" id="signup">
+        <div class="container">
+            <div class="signup-box">
+                <h2>Get Your Blast</h2>
+                <p class="subtitle">Sign up now and get 20% off your first order</p>
+                <form id="signupForm" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="plan">Choose Your Plan</label>
+                        <select id="plan" name="plan" required>
+                            <option value="">Select a plan...</option>
+                            <option value="starter">Starter Pack - £19.99 (one-time)</option>
+                            <option value="monthly">Monthly Box - £29.99/month</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date</label>
+                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                        </div>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn-primary">Complete Order & Get 20% Off</button>
+                    </div>
+                    <p class="form-guarantee">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                        Secure checkout. 30-day money-back guarantee. Cancel anytime.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Blast Drinks. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Video play functionality
+        const videoWrapper = document.getElementById('videoWrapper');
+        const videoPlaceholder = document.getElementById('videoPlaceholder');
+        const heroVideo = document.getElementById('heroVideo');
+
+        videoWrapper.addEventListener('click', function() {
+            if (heroVideo.src || heroVideo.querySelector('source').src) {
+                videoPlaceholder.style.display = 'none';
+                heroVideo.play();
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            btn.textContent = 'Processing...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.textContent = 'Order Confirmed!';
+                btn.style.background = '#00c853';
+            }, 2000);
+        });
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.benefit-card, .product-card, .testimonial-card, .pricing-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
