@@ -918,16 +918,24 @@
 
         document.getElementById('preorderForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const btn = this.querySelector('button[type="submit"]');
-            btn.textContent = 'Submitting...';
-            btn.disabled = true;
-            btn.style.opacity = '0.6';
 
-            setTimeout(() => {
-                btn.textContent = 'Pre-Order Received';
-                btn.style.opacity = '1';
-                btn.style.background = '#6b7a4e';
-            }, 1500);
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var address = document.getElementById('address').value;
+            var city = document.getElementById('city').value;
+            var postcode = document.getElementById('postcode').value;
+            var quantity = document.getElementById('quantity').value;
+
+            var message = 'New Blast Drinks Pre-Order%0A%0A'
+                + 'Name: ' + encodeURIComponent(firstName + ' ' + lastName) + '%0A'
+                + 'Email: ' + encodeURIComponent(email) + '%0A'
+                + 'Phone: ' + encodeURIComponent(phone) + '%0A'
+                + 'Address: ' + encodeURIComponent(address + ', ' + city + ', ' + postcode) + '%0A'
+                + 'Quantity: ' + encodeURIComponent(quantity) + ' bottles';
+
+            window.open('https://wa.me/447508804298?text=' + message, '_blank');
         });
 
         const observer = new IntersectionObserver((entries) => {
