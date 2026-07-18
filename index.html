@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blast Drinks | Pre-Order Now</title>
+    <title>Blast Drinks | Wholesale</title>
     <style>
         * {
             margin: 0;
@@ -12,60 +12,52 @@
         }
 
         :root {
-            --pink: #f4b8c8;
-            --pink-light: #fce4ec;
-            --green: #d4dca0;
-            --green-light: #eef2d6;
-            --lavender: #c5b3cc;
-            --lavender-light: #e8dded;
-            --peach: #f5c8a0;
-            --peach-light: #fde8d0;
-            --bg: #fdf6f0;
-            --bg-alt: #f9ede3;
+            --pink: #f0b4c8;
+            --pink-soft: #fce8ef;
+            --blue: #9bafd4;
+            --blue-soft: #e4ecf7;
+            --pistachio: #b8c99a;
+            --pistachio-soft: #e8efd8;
+            --cream: #faf7f4;
+            --warm-white: #f5f0eb;
             --card: #ffffff;
-            --text: #2d2a32;
-            --text-muted: #7a7580;
-            --text-light: #a09aab;
+            --text: #1a1720;
+            --text-secondary: #5c5666;
+            --text-tertiary: #9991a3;
             --border: rgba(0,0,0,0.06);
-            --shadow: 0 4px 24px rgba(0,0,0,0.06);
-            --shadow-hover: 0 8px 40px rgba(0,0,0,0.1);
+            --border-hover: rgba(0,0,0,0.12);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow: 0 4px 20px rgba(0,0,0,0.05);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg);
+            background: var(--cream);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.65;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1060px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* Top Banner */
-        .top-banner {
-            background: linear-gradient(90deg, var(--pink), var(--lavender), var(--green));
-            text-align: center;
-            padding: 12px 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text);
-        }
-
-        /* Navigation */
+        /* Nav */
         .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(253, 246, 240, 0.95);
-            backdrop-filter: blur(12px);
+            background: rgba(250, 247, 244, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
-            padding: 14px 0;
+            padding: 16px 0;
         }
 
         .nav .container {
@@ -75,88 +67,94 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
+            font-size: 1.5rem;
+            font-weight: 800;
             color: var(--text);
-            letter-spacing: -1px;
-        }
-
-        .logo span {
-            color: var(--pink);
+            letter-spacing: -0.5px;
         }
 
         .nav-cta {
             background: var(--text);
-            color: var(--bg);
+            color: var(--cream);
             border: none;
-            padding: 10px 24px;
-            border-radius: 25px;
+            padding: 10px 26px;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s;
             text-decoration: none;
+            letter-spacing: 0.2px;
         }
 
         .nav-cta:hover {
             opacity: 0.85;
-            transform: scale(1.03);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            padding: 110px 0 50px;
+            padding: 140px 0 60px;
             text-align: center;
-            position: relative;
-            background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
         }
 
-        .hero-badge {
+        .hero-label {
             display: inline-block;
-            background: var(--pink-light);
-            border: 1px solid var(--pink);
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 0.8rem;
-            color: var(--text);
+            font-size: 0.72rem;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-tertiary);
             margin-bottom: 24px;
-            letter-spacing: 0.5px;
         }
 
         .hero h1 {
-            font-size: clamp(2.2rem, 5.5vw, 3.8rem);
-            font-weight: 900;
-            line-height: 1.15;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.12;
+            margin-bottom: 22px;
+            letter-spacing: -1.5px;
             color: var(--text);
         }
 
         .hero-sub {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 520px;
-            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin: 0 auto 44px;
+            line-height: 1.7;
         }
 
-        /* Video Section */
+        .hero-cta {
+            display: inline-block;
+            background: var(--text);
+            color: var(--cream);
+            padding: 14px 36px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .hero-cta:hover {
+            opacity: 0.85;
+        }
+
+        /* Video */
         .video-section {
-            padding: 10px 0 80px;
-            background: var(--bg-alt);
+            padding: 20px 0 100px;
         }
 
         .video-wrapper {
             position: relative;
-            max-width: 780px;
+            max-width: 760px;
             margin: 0 auto;
-            border-radius: 20px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-lg);
             border: 1px solid var(--border);
             aspect-ratio: 16/9;
-            background: var(--card);
-            cursor: pointer;
+            background: var(--warm-white);
         }
 
         .video-wrapper iframe {
@@ -166,360 +164,328 @@
             display: block;
         }
 
-        /* About / Intro Section */
-        .about {
+        /* Divider */
+        .divider {
+            width: 48px;
+            height: 1px;
+            background: var(--border-hover);
+            margin: 0 auto;
+        }
+
+        /* Section styling */
+        .section {
             padding: 90px 0;
+        }
+
+        .section.alt {
+            background: var(--warm-white);
+        }
+
+        .section-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--text-tertiary);
+            margin-bottom: 14px;
             text-align: center;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
             font-weight: 800;
             margin-bottom: 14px;
-            color: var(--text);
+            text-align: center;
+            letter-spacing: -1px;
         }
 
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 500px;
-            margin: 0 auto;
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 460px;
+            margin: 0 auto 50px;
+            text-align: center;
+            line-height: 1.7;
         }
 
-        .about-text {
-            max-width: 650px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-        }
-
-        /* Features */
-        .features {
-            padding: 80px 0;
-            background: var(--bg-alt);
-        }
-
-        .features-grid {
+        /* Why Stock */
+        .reasons-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
-        .feature-card {
+        .reason-card {
             background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 18px;
+            border-radius: 14px;
             padding: 32px;
-            transition: all 0.3s;
+            transition: all 0.25s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .reason-card:hover {
+            border-color: var(--border-hover);
             box-shadow: var(--shadow);
+            transform: translateY(-2px);
         }
 
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
+        .reason-number {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-tertiary);
+            letter-spacing: 1px;
+            margin-bottom: 14px;
         }
 
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 18px;
-            font-size: 1.4rem;
-        }
-
-        .feature-icon.pink { background: var(--pink-light); }
-        .feature-icon.green { background: var(--green-light); }
-        .feature-icon.lavender { background: var(--lavender-light); }
-        .feature-icon.peach { background: var(--peach-light); }
-
-        .feature-card h3 {
-            font-size: 1.1rem;
+        .reason-card h3 {
+            font-size: 1.05rem;
             font-weight: 700;
             margin-bottom: 8px;
+            letter-spacing: -0.3px;
         }
 
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            line-height: 1.6;
+        .reason-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.65;
         }
 
-        /* Products / Flavours */
-        .flavours {
-            padding: 90px 0;
-        }
-
+        /* Flavours */
         .flavours-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 28px;
+            gap: 24px;
         }
 
         .flavour-card {
             background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 36px 28px;
+            border-radius: 16px;
+            padding: 40px 28px 32px;
             text-align: center;
-            transition: all 0.3s;
-            box-shadow: var(--shadow);
+            transition: all 0.25s;
+            box-shadow: var(--shadow-sm);
         }
 
         .flavour-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
         }
 
-        .flavour-bear {
-            width: 100px;
-            height: 140px;
+        .flavour-swatch {
+            width: 80px;
+            height: 80px;
             margin: 0 auto 22px;
-            border-radius: 16px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3.5rem;
-            position: relative;
+            font-size: 2rem;
         }
 
-        .flavour-bear.pink-bear { background: var(--pink-light); }
-        .flavour-bear.green-bear { background: var(--green-light); }
-        .flavour-bear.lavender-bear { background: var(--lavender-light); }
+        .flavour-swatch.candyfloss { background: var(--pink-soft); }
+        .flavour-swatch.blueberry { background: var(--blue-soft); }
+        .flavour-swatch.pistachio { background: var(--pistachio-soft); }
 
         .flavour-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
             margin-bottom: 6px;
+            letter-spacing: -0.3px;
         }
 
         .flavour-tag {
             display: inline-block;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 3px 12px;
+            border-radius: 6px;
+            font-size: 0.72rem;
             font-weight: 600;
             margin-bottom: 12px;
+            letter-spacing: 0.3px;
         }
 
-        .flavour-tag.pink { background: var(--pink-light); color: #b5657e; }
-        .flavour-tag.green { background: var(--green-light); color: #7a8340; }
-        .flavour-tag.lavender { background: var(--lavender-light); color: #7e5f8e; }
+        .flavour-tag.pink { background: var(--pink-soft); color: #a8607a; }
+        .flavour-tag.blue { background: var(--blue-soft); color: #5a6f94; }
+        .flavour-tag.green { background: var(--pistachio-soft); color: #6b7a4e; }
 
         .flavour-card .desc {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background: var(--bg-alt);
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .testimonial-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 28px;
-            box-shadow: var(--shadow);
-        }
-
-        .testimonial-card .stars {
-            color: #f5a623;
-            font-size: 1rem;
-            margin-bottom: 14px;
-        }
-
-        .testimonial-card .quote {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            margin-bottom: 18px;
-            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
             line-height: 1.6;
         }
 
-        .testimonial-card .author {
-            font-weight: 700;
-            font-size: 0.88rem;
+        /* Stats row */
+        .stats {
+            padding: 70px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
-        .testimonial-card .role {
-            color: var(--text-light);
-            font-size: 0.8rem;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 32px;
+            text-align: center;
         }
 
-        /* Pre-order / Sign Up Section */
+        .stat-item .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 4px;
+        }
+
+        .stat-item .stat-label {
+            font-size: 0.78rem;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        /* Pre-order form */
         .preorder {
-            padding: 90px 0;
-            position: relative;
+            padding: 100px 0;
         }
 
         .preorder-box {
-            max-width: 540px;
+            max-width: 520px;
             margin: 0 auto;
             background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 24px;
+            border-radius: 18px;
             padding: 48px 40px;
             box-shadow: var(--shadow);
-            position: relative;
         }
 
         .preorder-box h2 {
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
         }
 
         .preorder-box .subtitle {
             text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 34px;
+            font-size: 0.92rem;
         }
 
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .form-group label {
             display: block;
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             font-weight: 600;
             margin-bottom: 6px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            letter-spacing: 0.3px;
         }
 
         .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form-group select {
             width: 100%;
-            padding: 13px 16px;
-            background: var(--bg);
+            padding: 12px 14px;
+            background: var(--cream);
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: 8px;
             color: var(--text);
-            font-size: 0.95rem;
-            transition: all 0.3s;
+            font-size: 0.92rem;
+            transition: all 0.2s;
             font-family: inherit;
         }
 
         .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form-group select:focus {
             outline: none;
-            border-color: var(--pink);
-            box-shadow: 0 0 0 3px rgba(244, 184, 200, 0.2);
+            border-color: var(--text-tertiary);
+            box-shadow: 0 0 0 3px rgba(0,0,0,0.03);
         }
 
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--text-light);
+        .form-group input::placeholder {
+            color: var(--text-tertiary);
         }
 
         .form-group select {
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237a7580' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%239991a3' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 40px;
+            background-position: right 14px center;
+            padding-right: 36px;
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 14px;
+            gap: 12px;
         }
 
         .form-submit {
-            margin-top: 28px;
+            margin-top: 26px;
         }
 
-        .btn-preorder {
+        .btn-submit {
             display: block;
             width: 100%;
             background: var(--text);
-            color: var(--bg);
+            color: var(--cream);
             border: none;
-            padding: 16px;
-            border-radius: 12px;
+            padding: 14px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.92rem;
             cursor: pointer;
-            transition: all 0.3s;
-            letter-spacing: 0.3px;
+            transition: all 0.2s;
+            letter-spacing: 0.2px;
         }
 
-        .btn-preorder:hover {
-            opacity: 0.88;
-            transform: scale(1.01);
+        .btn-submit:hover {
+            opacity: 0.85;
         }
 
         .form-note {
             text-align: center;
             margin-top: 14px;
-            font-size: 0.78rem;
-            color: var(--text-light);
-        }
-
-        /* Instagram CTA */
-        .ig-section {
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .ig-section p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-
-        .ig-handle {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text);
+            font-size: 0.76rem;
+            color: var(--text-tertiary);
+            line-height: 1.5;
         }
 
         /* Footer */
         .footer {
-            padding: 36px 0;
+            padding: 32px 0;
             text-align: center;
             border-top: 1px solid var(--border);
         }
 
-        .footer p {
-            color: var(--text-light);
+        .footer-brand {
+            font-weight: 700;
             font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .footer p {
+            color: var(--text-tertiary);
+            font-size: 0.78rem;
         }
 
         .footer-links {
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         .footer-links a {
-            color: var(--text-light);
+            color: var(--text-tertiary);
             text-decoration: none;
-            margin: 0 12px;
-            font-size: 0.82rem;
-            transition: color 0.3s;
+            margin: 0 10px;
+            font-size: 0.78rem;
+            transition: color 0.2s;
         }
 
         .footer-links a:hover {
@@ -527,62 +493,46 @@
         }
 
         /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(24px); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .animate {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
+        .animate { opacity: 0; animation: fadeIn 0.5s ease forwards; }
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .preorder-box {
-                padding: 32px 22px;
-            }
-
-            .features-grid,
-            .flavours-grid,
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
+            .form-row { grid-template-columns: 1fr; }
+            .preorder-box { padding: 32px 22px; }
+            .reasons-grid,
+            .flavours-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
         }
     </style>
 </head>
 <body>
-    <!-- Top Banner -->
-    <div class="top-banner">
-        Pre-orders are now open — be the first to try Blast
-    </div>
 
-    <!-- Navigation -->
+    <!-- Nav -->
     <nav class="nav">
         <div class="container">
-            <div class="logo">BLAST<span>.</span></div>
-            <a href="#preorder" class="nav-cta">Pre-Order</a>
+            <div class="logo">BLAST</div>
+            <a href="#preorder" class="nav-cta">Stock Blast</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge animate">Coming Soon</div>
-            <h1 class="animate delay-1">Something different<br>is brewing.</h1>
-            <p class="hero-sub animate delay-2">Blast Drinks — bold flavours in a bottle you'll want to keep. Watch the video and see what's coming.</p>
+            <span class="hero-label animate">Wholesale Enquiries</span>
+            <h1 class="animate delay-1">Stock the drink<br>your customers want.</h1>
+            <p class="hero-sub animate delay-2">Blast Drinks is a flavoured drinks brand in signature bear-shaped bottles. We're looking for retail partners across the UK to carry our range.</p>
+            <a href="#preorder" class="hero-cta animate delay-3">Place a Pre-Order</a>
         </div>
     </section>
 
-    <!-- Video Section -->
+    <!-- Video -->
     <section class="video-section">
         <div class="container">
             <div class="video-wrapper animate delay-3">
@@ -591,105 +541,85 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about">
+    <!-- Stats -->
+    <section class="stats">
         <div class="container">
-            <div class="section-header">
-                <h2>Meet Blast</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Flavours</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500ml</div>
+                    <div class="stat-label">Per Bottle</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12+</div>
+                    <div class="stat-label">Month Shelf Life</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">UK</div>
+                    <div class="stat-label">Based & Shipped</div>
+                </div>
             </div>
-            <p class="about-text">
-                We're Blast Drinks — a UK-based drinks brand that believes what you drink should look as good as it tastes. Our signature bear-shaped bottles are filled with smooth, flavourful drinks made with quality ingredients. No gimmicks, just good drinks in iconic packaging.
-            </p>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features">
+    <!-- Why Stock Blast -->
+    <section class="section">
         <div class="container">
-            <div class="section-header">
-                <h2>What makes Blast different</h2>
-                <p>It's not just about the taste — it's the whole experience.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon pink">&#127912;</div>
-                    <h3>Iconic Packaging</h3>
-                    <p>Our bear-shaped bottles are designed to stand out. Collect them, display them, reuse them — they're made to be kept.</p>
+            <span class="section-label">For Retailers</span>
+            <h2 class="section-title">Why stock Blast</h2>
+            <p class="section-desc">A product that sells itself. The packaging draws attention, the flavours bring customers back.</p>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-number">01</div>
+                    <h3>Standout shelf presence</h3>
+                    <p>The bear-shaped bottle is unlike anything else in the chiller. Customers pick it up before they even know the flavour.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon green">&#127793;</div>
-                    <h3>Quality Ingredients</h3>
-                    <p>Smooth, flavourful drinks made with care. Every recipe is crafted to taste great from the first sip to the last.</p>
+                <div class="reason-card">
+                    <div class="reason-number">02</div>
+                    <h3>Built-in demand</h3>
+                    <p>Blast already has a growing following on social media. Customers are searching for stockists — make sure you're one of them.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon lavender">&#128166;</div>
-                    <h3>Range of Flavours</h3>
-                    <p>From fruity and fresh to smooth and creamy — there's a Blast for every mood and every moment.</p>
+                <div class="reason-card">
+                    <div class="reason-number">03</div>
+                    <h3>Strong margins</h3>
+                    <p>Competitive wholesale pricing that gives you healthy margins while keeping the RRP accessible for your customers.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon peach">&#128230;</div>
-                    <h3>Delivered to You</h3>
-                    <p>Pre-order now and we'll deliver straight to your door. Simple as that.</p>
+                <div class="reason-card">
+                    <div class="reason-number">04</div>
+                    <h3>Repeat purchases</h3>
+                    <p>Three distinct flavours that keep customers coming back to try the full range. This isn't a one-time novelty buy.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Flavours -->
-    <section class="flavours">
+    <section class="section alt">
         <div class="container">
-            <div class="section-header">
-                <h2>The Range</h2>
-                <p>Three flavours to start. More on the way.</p>
-            </div>
+            <span class="section-label">The Range</span>
+            <h2 class="section-title">Three flavours, one iconic bottle</h2>
+            <p class="section-desc">Each flavour is crafted to appeal to a wide audience. Smooth, distinctive, and easy to drink.</p>
             <div class="flavours-grid">
                 <div class="flavour-card">
-                    <div class="flavour-bear pink-bear">&#128059;</div>
-                    <h3>Strawberry</h3>
-                    <div class="flavour-tag pink">Fruity & Sweet</div>
-                    <p class="desc">Sweet strawberry with a smooth finish. The one everyone reaches for first.</p>
+                    <div class="flavour-swatch candyfloss">&#127853;</div>
+                    <h3>Candyfloss</h3>
+                    <div class="flavour-tag pink">Sweet & Smooth</div>
+                    <p class="desc">Light, sweet, and nostalgic. A crowd favourite that appeals across all age groups.</p>
                 </div>
                 <div class="flavour-card">
-                    <div class="flavour-bear green-bear">&#128059;</div>
-                    <h3>Matcha</h3>
-                    <div class="flavour-tag green">Smooth & Earthy</div>
-                    <p class="desc">Creamy matcha with a clean taste. Calm energy in every sip.</p>
+                    <div class="flavour-swatch blueberry">&#129744;</div>
+                    <h3>Blueberry</h3>
+                    <div class="flavour-tag blue">Fruity & Fresh</div>
+                    <p class="desc">Bold blueberry with a clean, refreshing finish. The go-to for fruit drink lovers.</p>
                 </div>
                 <div class="flavour-card">
-                    <div class="flavour-bear lavender-bear">&#128059;</div>
-                    <h3>Grape</h3>
-                    <div class="flavour-tag lavender">Rich & Refreshing</div>
-                    <p class="desc">Bold grape flavour that's smooth going down. A proper crowd-pleaser.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Early love</h2>
-                <p>What people are saying after trying Blast.</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="quote">"The bottles alone are worth it — but the drinks actually taste amazing too. The strawberry one is unreal."</p>
-                    <div class="author">Jess H.</div>
-                    <div class="role">London</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="quote">"Finally a drink brand that gets it. Looks good, tastes good, and the packaging is so unique. Already pre-ordered for my mates."</p>
-                    <div class="author">Kian A.</div>
-                    <div class="role">Birmingham</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="quote">"I saw these on Insta and had to try them. The matcha is so smooth. My whole office wants one now."</p>
-                    <div class="author">Priya K.</div>
-                    <div class="role">Manchester</div>
+                    <div class="flavour-swatch pistachio">&#127848;</div>
+                    <h3>Pistachio Kulfi</h3>
+                    <div class="flavour-tag green">Creamy & Unique</div>
+                    <p class="desc">Rich pistachio kulfi flavour — creamy, distinctive, and unlike anything else on the shelf.</p>
                 </div>
             </div>
         </div>
@@ -699,30 +629,30 @@
     <section class="preorder" id="preorder">
         <div class="container">
             <div class="preorder-box">
-                <h2>Pre-Order Blast</h2>
-                <p class="subtitle">Be one of the first to get your hands on Blast Drinks. Fill in your details below and we'll be in touch.</p>
+                <h2>Place a Pre-Order</h2>
+                <p class="subtitle">Fill in your details and we'll get back to you with pricing, availability, and delivery options.</p>
                 <form id="preorderForm" action="#" method="POST">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+                            <input type="text" id="firstName" name="firstName" placeholder="First name" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                            <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        <input type="email" id="email" name="email" placeholder="you@yourbusiness.com" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
                         <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000" required>
                     </div>
                     <div class="form-group">
-                        <label for="address">Delivery Address</label>
-                        <input type="text" id="address" name="address" placeholder="Your full address" required>
+                        <label for="address">Shop / Business Address</label>
+                        <input type="text" id="address" name="address" placeholder="Full address" required>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
@@ -737,36 +667,28 @@
                     <div class="form-group">
                         <label for="quantity">Quantity</label>
                         <select id="quantity" name="quantity" required>
-                            <option value="">How many bottles?</option>
-                            <option value="1">1 bottle</option>
-                            <option value="3">3 bottles</option>
-                            <option value="6">6 bottles (mixed)</option>
-                            <option value="12">12 bottles (mixed)</option>
-                            <option value="24">24 bottles (mixed)</option>
+                            <option value="">Select quantity</option>
+                            <option value="12">12 bottles</option>
+                            <option value="24">24 bottles</option>
+                            <option value="48">48 bottles</option>
+                            <option value="96">96 bottles</option>
                             <option value="custom">Custom amount</option>
                         </select>
                     </div>
                     <div class="form-submit">
-                        <button type="submit" class="btn-preorder">Submit Pre-Order</button>
+                        <button type="submit" class="btn-submit">Submit Pre-Order</button>
                     </div>
-                    <p class="form-note">We'll confirm your order and send payment details separately. No payment needed right now.</p>
+                    <p class="form-note">No payment required now. We'll be in touch to confirm your order and arrange delivery.</p>
                 </form>
             </div>
-        </div>
-    </section>
-
-    <!-- Instagram -->
-    <section class="ig-section">
-        <div class="container">
-            <p>Follow the journey</p>
-            <div class="ig-handle">@blastdrinksuk</div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Blast Drinks UK. All rights reserved.</p>
+            <div class="footer-brand">Blast Drinks UK</div>
+            <p>@blastdrinksuk</p>
             <div class="footer-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms</a>
@@ -791,13 +713,12 @@
             const btn = this.querySelector('button[type="submit"]');
             btn.textContent = 'Submitting...';
             btn.disabled = true;
-            btn.style.opacity = '0.7';
+            btn.style.opacity = '0.6';
 
             setTimeout(() => {
-                btn.textContent = 'Pre-Order Received!';
+                btn.textContent = 'Pre-Order Received';
                 btn.style.opacity = '1';
-                btn.style.background = '#7a8340';
-                btn.style.color = '#fff';
+                btn.style.background = '#6b7a4e';
             }, 1500);
         });
 
@@ -810,10 +731,10 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.feature-card, .flavour-card, .testimonial-card').forEach(el => {
+        document.querySelectorAll('.reason-card, .flavour-card, .stat-item').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(16px)';
-            el.style.transition = 'all 0.5s ease';
+            el.style.transform = 'translateY(12px)';
+            el.style.transition = 'all 0.4s ease';
             observer.observe(el);
         });
     </script>
