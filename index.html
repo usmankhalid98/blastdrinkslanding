@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blast Drinks | Fuel Your Fire</title>
+    <title>Blast Drinks | Pre-Order Now</title>
     <style>
         * {
             margin: 0;
@@ -12,22 +12,28 @@
         }
 
         :root {
-            --primary: #00e5ff;
-            --primary-dark: #00b8d4;
-            --accent: #ff3d00;
-            --accent-light: #ff6e40;
-            --dark: #0a0a0a;
-            --dark-surface: #141414;
-            --dark-card: #1a1a1a;
-            --text: #ffffff;
-            --text-muted: #b0b0b0;
-            --gradient: linear-gradient(135deg, #00e5ff, #7c4dff);
-            --glow: 0 0 30px rgba(0, 229, 255, 0.3);
+            --pink: #f4b8c8;
+            --pink-light: #fce4ec;
+            --green: #d4dca0;
+            --green-light: #eef2d6;
+            --lavender: #c5b3cc;
+            --lavender-light: #e8dded;
+            --peach: #f5c8a0;
+            --peach-light: #fde8d0;
+            --bg: #fdf6f0;
+            --bg-alt: #f9ede3;
+            --card: #ffffff;
+            --text: #2d2a32;
+            --text-muted: #7a7580;
+            --text-light: #a09aab;
+            --border: rgba(0,0,0,0.06);
+            --shadow: 0 4px 24px rgba(0,0,0,0.06);
+            --shadow-hover: 0 8px 40px rgba(0,0,0,0.1);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--dark);
+            background: var(--bg);
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
@@ -39,6 +45,16 @@
             padding: 0 20px;
         }
 
+        /* Top Banner */
+        .top-banner {
+            background: linear-gradient(90deg, var(--pink), var(--lavender), var(--green));
+            text-align: center;
+            padding: 12px 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
         /* Navigation */
         .nav {
             position: fixed;
@@ -46,10 +62,10 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
-            padding: 15px 0;
+            background: rgba(253, 246, 240, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 0;
         }
 
         .nav .container {
@@ -61,20 +77,21 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 900;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text);
             letter-spacing: -1px;
         }
 
+        .logo span {
+            color: var(--pink);
+        }
+
         .nav-cta {
-            background: var(--accent);
-            color: white;
+            background: var(--text);
+            color: var(--bg);
             border: none;
             padding: 10px 24px;
             border-radius: 25px;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s;
@@ -82,80 +99,63 @@
         }
 
         .nav-cta:hover {
-            background: var(--accent-light);
-            transform: scale(1.05);
+            opacity: 0.85;
+            transform: scale(1.03);
         }
 
         /* Hero Section */
         .hero {
-            padding: 120px 0 60px;
+            padding: 110px 0 50px;
             text-align: center;
             position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, transparent 70%);
-            pointer-events: none;
+            background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
         }
 
         .hero-badge {
             display: inline-block;
-            background: rgba(0, 229, 255, 0.1);
-            border: 1px solid rgba(0, 229, 255, 0.3);
+            background: var(--pink-light);
+            border: 1px solid var(--pink);
             padding: 8px 20px;
             border-radius: 25px;
-            font-size: 0.85rem;
-            color: var(--primary);
+            font-size: 0.8rem;
+            color: var(--text);
             font-weight: 600;
             margin-bottom: 24px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2.2rem, 5.5vw, 3.8rem);
             font-weight: 900;
-            line-height: 1.1;
+            line-height: 1.15;
             margin-bottom: 20px;
             letter-spacing: -1px;
-        }
-
-        .hero h1 span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text);
         }
 
         .hero-sub {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 600px;
+            max-width: 520px;
             margin: 0 auto 40px;
         }
 
         /* Video Section */
         .video-section {
-            padding: 20px 0 80px;
+            padding: 10px 0 80px;
+            background: var(--bg-alt);
         }
 
         .video-wrapper {
             position: relative;
-            max-width: 800px;
+            max-width: 780px;
             margin: 0 auto;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: var(--glow);
-            border: 1px solid rgba(0, 229, 255, 0.2);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
             aspect-ratio: 16/9;
-            background: var(--dark-card);
+            background: var(--card);
             cursor: pointer;
         }
 
@@ -173,538 +173,403 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(10,10,10,0.9));
+            background: linear-gradient(135deg, var(--pink-light), var(--lavender-light), var(--green-light));
         }
 
         .play-btn {
-            width: 80px;
-            height: 80px;
-            background: var(--accent);
+            width: 76px;
+            height: 76px;
+            background: var(--text);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             transition: all 0.3s;
-            box-shadow: 0 0 40px rgba(255, 61, 0, 0.4);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.15);
         }
 
         .play-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 60px rgba(255, 61, 0, 0.6);
+            transform: scale(1.08);
         }
 
         .play-btn svg {
-            width: 30px;
-            height: 30px;
+            width: 26px;
+            height: 26px;
             fill: white;
-            margin-left: 4px;
+            margin-left: 3px;
         }
 
         .video-placeholder p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
             font-weight: 500;
         }
 
-        /* Social Proof Bar */
-        .social-proof {
-            padding: 40px 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+        /* About / Intro Section */
+        .about {
+            padding: 90px 0;
             text-align: center;
-        }
-
-        .proof-stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .proof-stat {
-            text-align: center;
-        }
-
-        .proof-stat .number {
-            font-size: 2.5rem;
-            font-weight: 900;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .proof-stat .label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 4px;
-        }
-
-        /* Benefits Section */
-        .benefits {
-            padding: 100px 0;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .section-header h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 900;
-            margin-bottom: 16px;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: var(--text);
         }
 
         .section-header p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             max-width: 500px;
             margin: 0 auto;
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .benefit-card {
-            background: var(--dark-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 16px;
-            padding: 36px;
-            transition: all 0.3s;
-        }
-
-        .benefit-card:hover {
-            border-color: rgba(0, 229, 255, 0.3);
-            transform: translateY(-4px);
-            box-shadow: var(--glow);
-        }
-
-        .benefit-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(0, 229, 255, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .benefit-card p {
+        .about-text {
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.1rem;
             color: var(--text-muted);
-            font-size: 0.95rem;
+            line-height: 1.8;
         }
 
-        /* Products Section */
-        .products {
-            padding: 100px 0;
-            background: var(--dark-surface);
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: var(--bg-alt);
         }
 
-        .products-grid {
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 24px;
         }
 
-        .product-card {
-            background: var(--dark-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
+        .feature-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 32px;
             transition: all 0.3s;
+            box-shadow: var(--shadow);
         }
 
-        .product-card:hover {
-            border-color: rgba(0, 229, 255, 0.3);
+        .feature-card:hover {
             transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
         }
 
-        .product-image {
-            width: 120px;
-            height: 200px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(124, 77, 255, 0.2));
+        .feature-icon {
+            width: 50px;
+            height: 50px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            margin-bottom: 18px;
+            font-size: 1.4rem;
         }
 
-        .product-card h3 {
-            font-size: 1.3rem;
+        .feature-icon.pink { background: var(--pink-light); }
+        .feature-icon.green { background: var(--green-light); }
+        .feature-icon.lavender { background: var(--lavender-light); }
+        .feature-icon.peach { background: var(--peach-light); }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 8px;
         }
 
-        .product-card .flavor {
-            color: var(--primary);
-            font-size: 0.9rem;
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* Products / Flavours */
+        .flavours {
+            padding: 90px 0;
+        }
+
+        .flavours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+
+        .flavour-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+
+        .flavour-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .flavour-bear {
+            width: 100px;
+            height: 140px;
+            margin: 0 auto 22px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            position: relative;
+        }
+
+        .flavour-bear.pink-bear { background: var(--pink-light); }
+        .flavour-bear.green-bear { background: var(--green-light); }
+        .flavour-bear.lavender-bear { background: var(--lavender-light); }
+
+        .flavour-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .flavour-tag {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 12px;
         }
 
-        .product-card .description {
+        .flavour-tag.pink { background: var(--pink-light); color: #b5657e; }
+        .flavour-tag.green { background: var(--green-light); color: #7a8340; }
+        .flavour-tag.lavender { background: var(--lavender-light); color: #7e5f8e; }
+
+        .flavour-card .desc {
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 16px;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 100px 0;
-        }
-
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .pricing-card {
-            background: var(--dark-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s;
-        }
-
-        .pricing-card.featured {
-            border-color: var(--primary);
-            box-shadow: var(--glow);
-            transform: scale(1.03);
-        }
-
-        .pricing-card.featured::before {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gradient);
-            padding: 6px 20px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .pricing-card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .pricing-card .subtitle {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 24px;
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 8px;
-        }
-
-        .price span {
-            font-size: 1rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .price-note {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 30px;
-        }
-
-        .pricing-features {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 30px;
-        }
-
-        .pricing-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        .pricing-features li::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: 700;
-            margin-right: 10px;
-        }
-
-        /* CTA Buttons */
-        .btn-primary {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 16px 40px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            width: 100%;
-            text-align: center;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-light);
-            transform: scale(1.02);
-            box-shadow: 0 0 30px rgba(255, 61, 0, 0.4);
-        }
-
-        .btn-secondary {
-            display: inline-block;
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            padding: 14px 38px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            width: 100%;
-            text-align: center;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(0, 229, 255, 0.1);
-            transform: scale(1.02);
         }
 
         /* Testimonials */
         .testimonials {
-            padding: 100px 0;
-            background: var(--dark-surface);
+            padding: 80px 0;
+            background: var(--bg-alt);
         }
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
         }
 
         .testimonial-card {
-            background: var(--dark-card);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 16px;
-            padding: 30px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: var(--shadow);
         }
 
         .testimonial-card .stars {
-            color: #ffd600;
-            font-size: 1.1rem;
-            margin-bottom: 16px;
+            color: #f5a623;
+            font-size: 1rem;
+            margin-bottom: 14px;
         }
 
         .testimonial-card .quote {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             font-style: italic;
+            line-height: 1.6;
         }
 
         .testimonial-card .author {
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
         }
 
         .testimonial-card .role {
-            color: var(--text-muted);
+            color: var(--text-light);
             font-size: 0.8rem;
         }
 
-        /* Sign Up / Form Section */
-        .signup {
-            padding: 100px 0;
+        /* Pre-order / Sign Up Section */
+        .preorder {
+            padding: 90px 0;
             position: relative;
         }
 
-        .signup::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .signup-box {
-            max-width: 560px;
+        .preorder-box {
+            max-width: 540px;
             margin: 0 auto;
-            background: var(--dark-card);
-            border: 1px solid rgba(0, 229, 255, 0.2);
+            background: var(--card);
+            border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 50px 40px;
-            box-shadow: var(--glow);
+            padding: 48px 40px;
+            box-shadow: var(--shadow);
             position: relative;
         }
 
-        .signup-box h2 {
-            font-size: 2rem;
-            font-weight: 900;
+        .preorder-box h2 {
+            font-size: 1.9rem;
+            font-weight: 800;
             text-align: center;
             margin-bottom: 8px;
         }
 
-        .signup-box .subtitle {
+        .preorder-box .subtitle {
             text-align: center;
             color: var(--text-muted);
             margin-bottom: 32px;
+            font-size: 0.95rem;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .form-group label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .form-group input,
-        .form-group select {
+        .form-group select,
+        .form-group textarea {
             width: 100%;
-            padding: 14px 18px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            padding: 13px 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
             border-radius: 10px;
             color: var(--text);
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s;
+            font-family: inherit;
         }
 
         .form-group input:focus,
-        .form-group select:focus {
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1);
+            border-color: var(--pink);
+            box-shadow: 0 0 0 3px rgba(244, 184, 200, 0.2);
         }
 
-        .form-group input::placeholder {
-            color: rgba(255,255,255,0.3);
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-light);
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237a7580' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            gap: 14px;
         }
 
         .form-submit {
-            margin-top: 30px;
+            margin-top: 28px;
         }
 
-        .form-submit .btn-primary {
-            padding: 18px;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-        }
-
-        .form-guarantee {
-            text-align: center;
-            margin-top: 16px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .form-guarantee svg {
-            width: 14px;
-            height: 14px;
-            vertical-align: middle;
-            margin-right: 4px;
-        }
-
-        /* Urgency Banner */
-        .urgency {
-            background: linear-gradient(90deg, var(--accent), #ff6f00);
-            text-align: center;
-            padding: 14px 20px;
+        .btn-preorder {
+            display: block;
+            width: 100%;
+            background: var(--text);
+            color: var(--bg);
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.3px;
         }
 
-        .urgency span {
-            opacity: 0.9;
+        .btn-preorder:hover {
+            opacity: 0.88;
+            transform: scale(1.01);
+        }
+
+        .form-note {
+            text-align: center;
+            margin-top: 14px;
+            font-size: 0.78rem;
+            color: var(--text-light);
+        }
+
+        /* Instagram CTA */
+        .ig-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .ig-section p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .ig-handle {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text);
         }
 
         /* Footer */
         .footer {
-            padding: 40px 0;
+            padding: 36px 0;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid var(--border);
         }
 
         .footer p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
+            color: var(--text-light);
+            font-size: 0.82rem;
         }
 
         .footer-links {
-            margin-top: 12px;
+            margin-top: 10px;
         }
 
         .footer-links a {
-            color: var(--text-muted);
+            color: var(--text-light);
             text-decoration: none;
             margin: 0 12px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: var(--primary);
+            color: var(--text);
         }
 
         /* Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .animate {
@@ -715,27 +580,19 @@
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .proof-stats {
-                gap: 30px;
-            }
-
             .form-row {
                 grid-template-columns: 1fr;
             }
 
-            .signup-box {
-                padding: 30px 24px;
+            .preorder-box {
+                padding: 32px 22px;
             }
 
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-
-            .benefits-grid,
+            .features-grid,
+            .flavours-grid,
             .testimonial-grid {
                 grid-template-columns: 1fr;
             }
@@ -743,25 +600,25 @@
     </style>
 </head>
 <body>
-    <!-- Urgency Banner -->
-    <div class="urgency">
-        <span>LIMITED TIME OFFER — Get 20% OFF your first order. Use code: BLAST20</span>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        Pre-orders are now open — be the first to try Blast
     </div>
 
     <!-- Navigation -->
     <nav class="nav">
         <div class="container">
-            <div class="logo">BLAST</div>
-            <a href="#signup" class="nav-cta">Get Started</a>
+            <div class="logo">BLAST<span>.</span></div>
+            <a href="#preorder" class="nav-cta">Pre-Order</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge animate">Now Available Nationwide</div>
-            <h1 class="animate delay-1">The Drink That<br><span>Fuels Champions</span></h1>
-            <p class="hero-sub animate delay-2">Watch how Blast Drinks is changing the game. Clean energy, bold flavours, zero compromise.</p>
+            <div class="hero-badge animate">Coming Soon</div>
+            <h1 class="animate delay-1">Something different<br>is brewing.</h1>
+            <p class="hero-sub animate delay-2">Blast Drinks — bold flavours in a bottle you'll want to keep. Watch the video and see what's coming.</p>
         </div>
     </section>
 
@@ -782,97 +639,75 @@
         </div>
     </section>
 
-    <!-- Social Proof -->
-    <section class="social-proof">
+    <!-- About Section -->
+    <section class="about">
         <div class="container">
-            <div class="proof-stats">
-                <div class="proof-stat">
-                    <div class="number">50K+</div>
-                    <div class="label">Happy Customers</div>
+            <div class="section-header">
+                <h2>Meet Blast</h2>
+            </div>
+            <p class="about-text">
+                We're Blast Drinks — a UK-based drinks brand that believes what you drink should look as good as it tastes. Our signature bear-shaped bottles are filled with smooth, flavourful drinks made with quality ingredients. No gimmicks, just good drinks in iconic packaging.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>What makes Blast different</h2>
+                <p>It's not just about the taste — it's the whole experience.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon pink">&#127912;</div>
+                    <h3>Iconic Packaging</h3>
+                    <p>Our bear-shaped bottles are designed to stand out. Collect them, display them, reuse them — they're made to be kept.</p>
                 </div>
-                <div class="proof-stat">
-                    <div class="number">4.9/5</div>
-                    <div class="label">Average Rating</div>
+                <div class="feature-card">
+                    <div class="feature-icon green">&#127793;</div>
+                    <h3>Quality Ingredients</h3>
+                    <p>Smooth, flavourful drinks made with care. Every recipe is crafted to taste great from the first sip to the last.</p>
                 </div>
-                <div class="proof-stat">
-                    <div class="number">100%</div>
-                    <div class="label">Natural Ingredients</div>
+                <div class="feature-card">
+                    <div class="feature-icon lavender">&#128166;</div>
+                    <h3>Range of Flavours</h3>
+                    <p>From fruity and fresh to smooth and creamy — there's a Blast for every mood and every moment.</p>
                 </div>
-                <div class="proof-stat">
-                    <div class="number">0g</div>
-                    <div class="label">Added Sugar</div>
+                <div class="feature-card">
+                    <div class="feature-icon peach">&#128230;</div>
+                    <h3>Delivered to You</h3>
+                    <p>Pre-order now and we'll deliver straight to your door. Simple as that.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits">
+    <!-- Flavours -->
+    <section class="flavours">
         <div class="container">
             <div class="section-header">
-                <h2>Why People Choose Blast</h2>
-                <p>Engineered for performance. Designed for taste.</p>
+                <h2>The Range</h2>
+                <p>Three flavours to start. More on the way.</p>
             </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#9889;</div>
-                    <h3>Clean Energy</h3>
-                    <p>Sustained energy without the crash. Powered by natural caffeine and B-vitamins for all-day focus.</p>
+            <div class="flavours-grid">
+                <div class="flavour-card">
+                    <div class="flavour-bear pink-bear">&#128059;</div>
+                    <h3>Strawberry</h3>
+                    <div class="flavour-tag pink">Fruity & Sweet</div>
+                    <p class="desc">Sweet strawberry with a smooth finish. The one everyone reaches for first.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#127811;</div>
-                    <h3>Natural Ingredients</h3>
-                    <p>No artificial colours, no preservatives. Just real ingredients that taste amazing and fuel your body right.</p>
+                <div class="flavour-card">
+                    <div class="flavour-bear green-bear">&#128059;</div>
+                    <h3>Matcha</h3>
+                    <div class="flavour-tag green">Smooth & Earthy</div>
+                    <p class="desc">Creamy matcha with a clean taste. Calm energy in every sip.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#128170;</div>
-                    <h3>Performance Driven</h3>
-                    <p>Whether you're in the gym, at work, or gaming — Blast gives you the edge when it matters most.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#127942;</div>
-                    <h3>Bold Flavours</h3>
-                    <p>From Tropical Surge to Arctic Berry, every sip is an experience. No bland, watered-down energy here.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#10084;&#65039;</div>
-                    <h3>Zero Sugar</h3>
-                    <p>All the taste, none of the guilt. Blast delivers flavour without the sugar spike.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#128640;</div>
-                    <h3>Fast Delivery</h3>
-                    <p>Order today, get it tomorrow. Free shipping on all orders over £30. Subscribe and save even more.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="products">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Range</h2>
-                <p>Find your flavour. Every can packs a punch.</p>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">&#127818;</div>
-                    <h3>Tropical Surge</h3>
-                    <div class="flavor">Mango & Passionfruit</div>
-                    <p class="description">A tropical explosion that hits different. Sweet, tangy, and loaded with energy.</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">&#129744;</div>
-                    <h3>Arctic Berry</h3>
-                    <div class="flavor">Blueberry & Ice</div>
-                    <p class="description">Cool, refreshing, and packed with antioxidants. Your new go-to for focus.</p>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">&#127819;</div>
-                    <h3>Citrus Blast</h3>
-                    <div class="flavor">Lemon & Lime</div>
-                    <p class="description">The original. Sharp citrus with a smooth finish that keeps you coming back.</p>
+                <div class="flavour-card">
+                    <div class="flavour-bear lavender-bear">&#128059;</div>
+                    <h3>Grape</h3>
+                    <div class="flavour-tag lavender">Rich & Refreshing</div>
+                    <p class="desc">Bold grape flavour that's smooth going down. A proper crowd-pleaser.</p>
                 </div>
             </div>
         </div>
@@ -882,155 +717,125 @@
     <section class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2>What People Are Saying</h2>
-                <p>Join thousands who've made the switch to Blast.</p>
+                <h2>Early love</h2>
+                <p>What people are saying after trying Blast.</p>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="quote">"I've tried every energy drink out there. Blast is the only one that gives me clean energy without the jitters or crash. Absolutely hooked."</p>
-                    <div class="author">Jake T.</div>
-                    <div class="role">Personal Trainer</div>
+                    <p class="quote">"The bottles alone are worth it — but the drinks actually taste amazing too. The strawberry one is unreal."</p>
+                    <div class="author">Jess H.</div>
+                    <div class="role">London</div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="quote">"The Tropical Surge flavour is unreal. Tastes like a holiday in a can. And zero sugar? Sign me up for the subscription."</p>
-                    <div class="author">Sarah M.</div>
-                    <div class="role">Content Creator</div>
+                    <p class="quote">"Finally a drink brand that gets it. Looks good, tastes good, and the packaging is so unique. Already pre-ordered for my mates."</p>
+                    <div class="author">Kian A.</div>
+                    <div class="role">Birmingham</div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="quote">"Been drinking Blast before every session for 3 months. My focus and endurance are through the roof. This stuff actually works."</p>
-                    <div class="author">Marcus R.</div>
-                    <div class="role">Semi-Pro Footballer</div>
+                    <p class="quote">"I saw these on Insta and had to try them. The matcha is so smooth. My whole office wants one now."</p>
+                    <div class="author">Priya K.</div>
+                    <div class="role">Manchester</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <!-- Pre-order Form -->
+    <section class="preorder" id="preorder">
         <div class="container">
-            <div class="section-header">
-                <h2>Choose Your Pack</h2>
-                <p>Subscribe monthly or grab a one-time order. Cancel anytime.</p>
-            </div>
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <h3>Starter Pack</h3>
-                    <p class="subtitle">Try the range</p>
-                    <div class="price">£19.99 <span>/one-time</span></div>
-                    <p class="price-note">6 cans - mixed flavours</p>
-                    <ul class="pricing-features">
-                        <li>6 cans (2 of each flavour)</li>
-                        <li>Free shipping</li>
-                        <li>Perfect for first-timers</li>
-                    </ul>
-                    <a href="#signup" class="btn-secondary">Get Started</a>
-                </div>
-                <div class="pricing-card featured">
-                    <h3>Monthly Box</h3>
-                    <p class="subtitle">Never run out</p>
-                    <div class="price">£29.99 <span>/month</span></div>
-                    <p class="price-note">12 cans delivered monthly</p>
-                    <ul class="pricing-features">
-                        <li>12 cans per month</li>
-                        <li>Choose your flavours</li>
-                        <li>Free shipping always</li>
-                        <li>Cancel anytime</li>
-                        <li>Exclusive subscriber discounts</li>
-                    </ul>
-                    <a href="#signup" class="btn-primary">Subscribe Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sign Up Section -->
-    <section class="signup" id="signup">
-        <div class="container">
-            <div class="signup-box">
-                <h2>Get Your Blast</h2>
-                <p class="subtitle">Sign up now and get 20% off your first order</p>
-                <form id="signupForm" action="#" method="POST">
+            <div class="preorder-box">
+                <h2>Pre-Order Blast</h2>
+                <p class="subtitle">Be one of the first to get your hands on Blast Drinks. Fill in your details below and we'll be in touch.</p>
+                <form id="preorderForm" action="#" method="POST">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                            <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+                            <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000">
+                        <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000" required>
                     </div>
                     <div class="form-group">
-                        <label for="plan">Choose Your Plan</label>
-                        <select id="plan" name="plan" required>
-                            <option value="">Select a plan...</option>
-                            <option value="starter">Starter Pack - £19.99 (one-time)</option>
-                            <option value="monthly">Monthly Box - £29.99/month</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="cardNumber">Card Number</label>
-                        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+                        <label for="address">Delivery Address</label>
+                        <input type="text" id="address" name="address" placeholder="Your full address" required>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="expiry">Expiry Date</label>
-                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" placeholder="City" required>
                         </div>
                         <div class="form-group">
-                            <label for="cvv">CVV</label>
-                            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                            <label for="postcode">Postcode</label>
+                            <input type="text" id="postcode" name="postcode" placeholder="Postcode" required>
                         </div>
                     </div>
-                    <div class="form-submit">
-                        <button type="submit" class="btn-primary">Complete Order & Get 20% Off</button>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <select id="quantity" name="quantity" required>
+                            <option value="">How many bottles?</option>
+                            <option value="1">1 bottle</option>
+                            <option value="3">3 bottles</option>
+                            <option value="6">6 bottles (mixed)</option>
+                            <option value="12">12 bottles (mixed)</option>
+                            <option value="24">24 bottles (mixed)</option>
+                            <option value="custom">Custom amount</option>
+                        </select>
                     </div>
-                    <p class="form-guarantee">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-                        Secure checkout. 30-day money-back guarantee. Cancel anytime.
-                    </p>
+                    <div class="form-submit">
+                        <button type="submit" class="btn-preorder">Submit Pre-Order</button>
+                    </div>
+                    <p class="form-note">We'll confirm your order and send payment details separately. No payment needed right now.</p>
                 </form>
             </div>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="ig-section">
+        <div class="container">
+            <p>Follow the journey</p>
+            <div class="ig-handle">@blastdrinksuk</div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Blast Drinks. All rights reserved.</p>
+            <p>&copy; 2025 Blast Drinks UK. All rights reserved.</p>
             <div class="footer-links">
                 <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact Us</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Video play functionality
         const videoWrapper = document.getElementById('videoWrapper');
         const videoPlaceholder = document.getElementById('videoPlaceholder');
         const heroVideo = document.getElementById('heroVideo');
 
         videoWrapper.addEventListener('click', function() {
-            if (heroVideo.src || heroVideo.querySelector('source').src) {
+            const src = heroVideo.querySelector('source').getAttribute('src');
+            if (src) {
                 videoPlaceholder.style.display = 'none';
                 heroVideo.play();
             }
         });
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1041,20 +846,21 @@
             });
         });
 
-        // Form submission
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
+        document.getElementById('preorderForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = this.querySelector('button[type="submit"]');
-            btn.textContent = 'Processing...';
+            btn.textContent = 'Submitting...';
             btn.disabled = true;
+            btn.style.opacity = '0.7';
 
             setTimeout(() => {
-                btn.textContent = 'Order Confirmed!';
-                btn.style.background = '#00c853';
-            }, 2000);
+                btn.textContent = 'Pre-Order Received!';
+                btn.style.opacity = '1';
+                btn.style.background = '#7a8340';
+                btn.style.color = '#fff';
+            }, 1500);
         });
 
-        // Intersection Observer for scroll animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1064,9 +870,9 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.benefit-card, .product-card, .testimonial-card, .pricing-card').forEach(el => {
+        document.querySelectorAll('.feature-card, .flavour-card, .testimonial-card').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
+            el.style.transform = 'translateY(16px)';
             el.style.transition = 'all 0.5s ease';
             observer.observe(el);
         });
