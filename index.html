@@ -884,7 +884,7 @@
                         </select>
                     </div>
                     <div class="form-submit">
-                        <a href="https://wise.com/pay/r/rTc6o-XYKf-8XBw" target="_blank" class="btn-submit" id="payBtn" style="text-decoration:none; text-align:center;">Make Payment</a>
+                        <a href="https://buy.stripe.com/7sYeVdesT23M1bfekh1Nu0r" target="_blank" class="btn-submit" id="payBtn" style="text-decoration:none; text-align:center;">Make Payment</a>
                     </div>
                     <div class="form-submit" style="margin-top:12px;">
                         <button type="submit" class="btn-submit" id="submitBtn" disabled style="opacity:0.5; cursor:not-allowed;">Submit Pre-Order</button>
@@ -928,7 +928,7 @@
             submitBtn.disabled = false;
             submitBtn.style.opacity = '1';
             submitBtn.style.cursor = 'pointer';
-            payBtn.textContent = 'Payment Opened';
+            payBtn.textContent = 'Payment Opened — Complete on Stripe';
             payBtn.style.background = '#6b7a4e';
         });
 
@@ -953,7 +953,7 @@
                 + 'Phone: ' + phone + '\n'
                 + 'Address: ' + address + ', ' + city + ', ' + postcode + '\n'
                 + 'Quantity: ' + quantity + ' bottles\n\n'
-                + 'Payment has been made via Wise.'
+                + 'Payment has been made via Stripe.'
             );
 
             window.open('https://wa.me/447508804298?text=' + message, '_blank');
