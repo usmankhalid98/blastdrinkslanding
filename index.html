@@ -474,6 +474,95 @@
             line-height: 1.5;
         }
 
+        /* Offer */
+        .offer-section {
+            background: var(--pistachio-bg);
+        }
+
+        .offer-box {
+            max-width: 620px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .offer-label {
+            display: inline-block;
+            background: var(--pistachio);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 5px 16px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .offer-title {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            margin-bottom: 14px;
+        }
+
+        .offer-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-result {
+            display: inline-block;
+            background: var(--pink);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-quote {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.65;
+            margin-bottom: 18px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            font-size: 0.88rem;
+        }
+
+        .testimonial-location {
+            color: var(--text-tertiary);
+            font-size: 0.78rem;
+        }
+
         /* Footer */
         .footer {
             padding: 32px 0;
@@ -639,12 +728,53 @@
         </div>
     </section>
 
+    <!-- Offer Banner -->
+    <section class="section offer-section">
+        <div class="container">
+            <div class="offer-box">
+                <span class="offer-label">Pre-Order Bonus</span>
+                <h2 class="offer-title">Free promotional video for your store</h2>
+                <p class="offer-desc">Place a pre-order and receive a professionally produced promotional video for your shop — worth £1,500 — completely free. Use it across your socials, in-store screens, or website to drive footfall and sales.</p>
+                <a href="#preorder" class="hero-cta">Claim Your Free Video</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section lilac-bg">
+        <div class="container">
+            <span class="section-label">Retailer Results</span>
+            <h2 class="section-title">What stockists are seeing</h2>
+            <p class="section-desc">Early retail partners are already reporting strong results with Blast on their shelves.</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-result">Sold out in 3 days</div>
+                    <p class="testimonial-quote">"We put Blast in the chiller on a Friday and by Monday they were gone. Customers were coming in specifically asking for the bear bottles. Had to reorder straight away."</p>
+                    <div class="testimonial-author">Ahmed R.</div>
+                    <div class="testimonial-location">Corner shop, East London</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-result">40% higher margin than competitors</div>
+                    <p class="testimonial-quote">"The margins are better than most soft drinks we stock, and they actually move. We've given Blast a permanent spot in the chiller now."</p>
+                    <div class="testimonial-author">Priya S.</div>
+                    <div class="testimonial-location">Convenience store, Birmingham</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-result">Repeat customers within a week</div>
+                    <p class="testimonial-quote">"People buy one flavour, come back for the other two. We've had teenagers bringing their mates in just for Blast. It's become a thing in our area."</p>
+                    <div class="testimonial-author">James W.</div>
+                    <div class="testimonial-location">Off-licence, Manchester</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pre-order Form -->
     <section class="preorder" id="preorder">
         <div class="container">
             <div class="preorder-box">
                 <h2>Place a Pre-Order</h2>
-                <p class="subtitle">Fill in your details and we'll get back to you with pricing, availability, and delivery options.</p>
+                <p class="subtitle">Fill in your details and we'll get back to you with pricing, availability, and delivery options. Pre-orders include a free promotional video for your store worth £1,500.</p>
                 <form id="preorderForm" action="#" method="POST">
                     <div class="form-row">
                         <div class="form-group">
