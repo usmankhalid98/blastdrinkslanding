@@ -15,20 +15,20 @@
         }
 
         :root {
-            --pink: #f0b0be;
-            --pink-vibrant: #f472a8;
-            --pink-soft: #f8d5dd;
-            --pink-bg: #fae3e8;
-            --blueberry: #9b7db8;
-            --blueberry-vibrant: #8b5fbf;
-            --blueberry-soft: #d9cedd;
-            --blueberry-bg: #e8dee9;
-            --pistachio: #a8c24a;
-            --pistachio-vibrant: #8fb83a;
-            --pistachio-soft: #dde3b5;
-            --pistachio-bg: #eaedce;
-            --peach: #f4a86c;
-            --peach-soft: #f0d4b5;
+            --pink: #f5c2cc;
+            --pink-vibrant: #e8899e;
+            --pink-soft: #fad9e0;
+            --pink-bg: #fce8ec;
+            --blueberry: #c8b8d4;
+            --blueberry-vibrant: #a68fbe;
+            --blueberry-soft: #ddd2e6;
+            --blueberry-bg: #ece5f0;
+            --pistachio: #d4dfa0;
+            --pistachio-vibrant: #b5c66e;
+            --pistachio-soft: #e4ebc0;
+            --pistachio-bg: #eff2da;
+            --peach: #f4c4a0;
+            --peach-soft: #f8dcc4;
             --candy: #ffc8dd;
             --text: #2a2430;
             --text-secondary: #5e5568;
@@ -857,12 +857,60 @@
             color: var(--pink);
         }
 
-        /* ===== SPLASH DIVIDERS ===== */
-        .splash-divider {
+        /* ===== PRODUCT GALLERY ===== */
+        .gallery-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #fce8ec 0%, #ece5f0 50%, #eff2da 100%);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid rgba(255,255,255,0.8);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            aspect-ratio: 3/4;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
+        }
+
+        .hero-product-img {
+            max-width: 420px;
+            margin: 0 auto 40px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            border: 4px solid rgba(255,255,255,0.7);
+        }
+
+        .hero-product-img img {
             width: 100%;
             height: auto;
-            margin: -2px 0;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* ===== ANIMATIONS ===== */
@@ -884,13 +932,8 @@
             .reasons-grid,
             .flavours-grid { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-            .hero-bottles svg { width: 70px; height: auto; }
-            .hero-bottles { gap: 14px; }
-        }
-
-        @media (max-width: 480px) {
-            .hero-bottles svg { width: 56px; height: auto; }
-            .hero-bottles { gap: 10px; }
+            .hero-product-img { max-width: 300px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -918,79 +961,8 @@
             <h1 class="animate delay-1">Stock the drink<br>your customers <span class="highlight">can't resist.</span></h1>
             <p class="hero-sub animate delay-2">Blast Drinks — flavoured drinks in iconic bear-shaped bottles. Three bold flavours, massive social buzz, and real results for retailers across the UK.</p>
 
-            <div class="hero-bottles animate delay-3">
-                <!-- Candyfloss Bear Bottle -->
-                <div class="hero-bottle">
-                    <svg viewBox="0 0 100 150" width="90" height="130">
-                        <defs>
-                            <linearGradient id="pinkG" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stop-color="#f9c0d0"/>
-                                <stop offset="100%" stop-color="#f472a8"/>
-                            </linearGradient>
-                        </defs>
-                        <circle cx="50" cy="28" r="24" fill="url(#pinkG)"/>
-                        <circle cx="35" cy="14" r="9" fill="url(#pinkG)"/>
-                        <circle cx="65" cy="14" r="9" fill="url(#pinkG)"/>
-                        <rect x="30" y="48" width="40" height="46" rx="8" fill="url(#pinkG)"/>
-                        <rect x="20" y="52" width="14" height="30" rx="6" fill="url(#pinkG)"/>
-                        <rect x="66" y="52" width="14" height="30" rx="6" fill="url(#pinkG)"/>
-                        <rect x="32" y="96" width="15" height="24" rx="6" fill="url(#pinkG)"/>
-                        <rect x="53" y="96" width="15" height="24" rx="6" fill="url(#pinkG)"/>
-                        <line x1="42" y1="24" x2="47" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                        <line x1="47" y1="24" x2="42" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                        <line x1="53" y1="24" x2="58" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                        <line x1="58" y1="24" x2="53" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                        <ellipse cx="50" cy="70" rx="12" ry="6" fill="rgba(255,255,255,0.3)" />
-                    </svg>
-                </div>
-                <!-- Blueberry Bear Bottle -->
-                <div class="hero-bottle">
-                    <svg viewBox="0 0 100 150" width="90" height="130">
-                        <defs>
-                            <linearGradient id="blueG" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stop-color="#c4aad4"/>
-                                <stop offset="100%" stop-color="#8b5fbf"/>
-                            </linearGradient>
-                        </defs>
-                        <circle cx="50" cy="28" r="24" fill="url(#blueG)"/>
-                        <circle cx="35" cy="14" r="9" fill="url(#blueG)"/>
-                        <circle cx="65" cy="14" r="9" fill="url(#blueG)"/>
-                        <rect x="30" y="48" width="40" height="46" rx="8" fill="url(#blueG)"/>
-                        <rect x="20" y="52" width="14" height="30" rx="6" fill="url(#blueG)"/>
-                        <rect x="66" y="52" width="14" height="30" rx="6" fill="url(#blueG)"/>
-                        <rect x="32" y="96" width="15" height="24" rx="6" fill="url(#blueG)"/>
-                        <rect x="53" y="96" width="15" height="24" rx="6" fill="url(#blueG)"/>
-                        <line x1="42" y1="24" x2="47" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                        <line x1="47" y1="24" x2="42" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                        <line x1="53" y1="24" x2="58" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                        <line x1="58" y1="24" x2="53" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                        <ellipse cx="50" cy="70" rx="12" ry="6" fill="rgba(255,255,255,0.3)" />
-                    </svg>
-                </div>
-                <!-- Pistachio Bear Bottle -->
-                <div class="hero-bottle">
-                    <svg viewBox="0 0 100 150" width="90" height="130">
-                        <defs>
-                            <linearGradient id="greenG" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stop-color="#c8d870"/>
-                                <stop offset="100%" stop-color="#8fb83a"/>
-                            </linearGradient>
-                        </defs>
-                        <circle cx="50" cy="28" r="24" fill="url(#greenG)"/>
-                        <circle cx="35" cy="14" r="9" fill="url(#greenG)"/>
-                        <circle cx="65" cy="14" r="9" fill="url(#greenG)"/>
-                        <rect x="30" y="48" width="40" height="46" rx="8" fill="url(#greenG)"/>
-                        <rect x="20" y="52" width="14" height="30" rx="6" fill="url(#greenG)"/>
-                        <rect x="66" y="52" width="14" height="30" rx="6" fill="url(#greenG)"/>
-                        <rect x="32" y="96" width="15" height="24" rx="6" fill="url(#greenG)"/>
-                        <rect x="53" y="96" width="15" height="24" rx="6" fill="url(#greenG)"/>
-                        <line x1="42" y1="24" x2="47" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                        <line x1="47" y1="24" x2="42" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                        <line x1="53" y1="24" x2="58" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                        <line x1="58" y1="24" x2="53" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                        <ellipse cx="50" cy="70" rx="12" ry="6" fill="rgba(255,255,255,0.3)" />
-                    </svg>
-                </div>
+            <div class="hero-product-img animate delay-3">
+                <img src="images/blast-lineup.jpg" alt="Blast Drinks bear-shaped bottles — Candyfloss, Pistachio Kulfi, and Blueberry">
             </div>
 
             <a href="#preorder" class="hero-cta animate delay-4">Place a Pre-Order</a>
@@ -1005,6 +977,29 @@
             </div>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/AQfB48LqCz8" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-label-wrap"><span class="section-label">The Product</span></div>
+            <h2 class="section-title">The bottle everyone's talking about</h2>
+            <p class="section-desc">Bearbrick-style bottles with X X eyes. Bold, collectible, and impossible to ignore on the shelf.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/blast-holding.jpg" alt="All three Blast Drinks bear bottles held together">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/blast-lineup-pastel.jpg" alt="Blast Drinks bottles lined up on pastel background">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/blast-pink-closeup.jpg" alt="Blast Drinks Candyfloss bottle close-up">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/blast-shelf.jpg" alt="Blast Drinks bottles on a shelf — pink, lavender, and green">
+                </div>
             </div>
         </div>
     </section>
@@ -1073,26 +1068,32 @@
             <div class="flavours-grid">
                 <div class="flavour-card candyfloss">
                     <div class="flavour-swatch">
-                        <svg viewBox="0 0 120 160" width="90" height="120">
-                            <defs>
-                                <linearGradient id="cfG" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#f9c0d0"/>
-                                    <stop offset="100%" stop-color="#f472a8"/>
-                                </linearGradient>
-                            </defs>
-                            <circle cx="60" cy="32" r="28" fill="url(#cfG)"/>
-                            <circle cx="42" cy="18" r="11" fill="url(#cfG)"/>
-                            <circle cx="78" cy="18" r="11" fill="url(#cfG)"/>
-                            <rect x="34" y="55" width="52" height="52" rx="10" fill="url(#cfG)"/>
-                            <rect x="22" y="58" width="16" height="36" rx="7" fill="url(#cfG)"/>
-                            <rect x="82" y="58" width="16" height="36" rx="7" fill="url(#cfG)"/>
-                            <rect x="36" y="110" width="18" height="28" rx="7" fill="url(#cfG)"/>
-                            <rect x="66" y="110" width="18" height="28" rx="7" fill="url(#cfG)"/>
-                            <line x1="50" y1="28" x2="55" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="55" y1="28" x2="50" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="65" y1="28" x2="70" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="70" y1="28" x2="65" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                            <ellipse cx="60" cy="80" rx="14" ry="6" fill="rgba(255,255,255,0.3)"/>
+                        <svg viewBox="0 0 100 170" width="90" height="150">
+                            <!-- Cap -->
+                            <rect x="38" y="0" width="24" height="12" rx="3" fill="#f0ebe8"/>
+                            <rect x="35" y="10" width="30" height="6" rx="2" fill="#e8e2de"/>
+                            <!-- Head -->
+                            <rect x="28" y="14" width="44" height="38" rx="12" fill="#f5c2cc"/>
+                            <!-- Ears -->
+                            <circle cx="30" cy="18" r="10" fill="#f5c2cc"/>
+                            <circle cx="70" cy="18" r="10" fill="#f5c2cc"/>
+                            <!-- X X Eyes -->
+                            <line x1="38" y1="28" x2="44" y2="34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="44" y1="28" x2="38" y2="34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="56" y1="28" x2="62" y2="34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="62" y1="28" x2="56" y2="34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+                            <!-- Snout -->
+                            <ellipse cx="50" cy="42" rx="8" ry="5" fill="#edb5c0"/>
+                            <!-- Body -->
+                            <rect x="26" y="52" width="48" height="56" rx="6" fill="#f5c2cc"/>
+                            <!-- Arms -->
+                            <rect x="14" y="56" width="16" height="36" rx="7" fill="#f5c2cc"/>
+                            <rect x="70" y="56" width="16" height="36" rx="7" fill="#f5c2cc"/>
+                            <!-- Legs -->
+                            <rect x="28" y="108" width="20" height="32" rx="6" fill="#f5c2cc"/>
+                            <rect x="52" y="108" width="20" height="32" rx="6" fill="#f5c2cc"/>
+                            <!-- Belly shine -->
+                            <ellipse cx="50" cy="78" rx="12" ry="8" fill="rgba(255,255,255,0.25)"/>
                         </svg>
                     </div>
                     <h3>Candyfloss</h3>
@@ -1101,26 +1102,23 @@
                 </div>
                 <div class="flavour-card blueberry">
                     <div class="flavour-swatch">
-                        <svg viewBox="0 0 120 160" width="90" height="120">
-                            <defs>
-                                <linearGradient id="bbG" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#c4aad4"/>
-                                    <stop offset="100%" stop-color="#8b5fbf"/>
-                                </linearGradient>
-                            </defs>
-                            <circle cx="60" cy="32" r="28" fill="url(#bbG)"/>
-                            <circle cx="42" cy="18" r="11" fill="url(#bbG)"/>
-                            <circle cx="78" cy="18" r="11" fill="url(#bbG)"/>
-                            <rect x="34" y="55" width="52" height="52" rx="10" fill="url(#bbG)"/>
-                            <rect x="22" y="58" width="16" height="36" rx="7" fill="url(#bbG)"/>
-                            <rect x="82" y="58" width="16" height="36" rx="7" fill="url(#bbG)"/>
-                            <rect x="36" y="110" width="18" height="28" rx="7" fill="url(#bbG)"/>
-                            <rect x="66" y="110" width="18" height="28" rx="7" fill="url(#bbG)"/>
-                            <line x1="50" y1="28" x2="55" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="55" y1="28" x2="50" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="65" y1="28" x2="70" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="70" y1="28" x2="65" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                            <ellipse cx="60" cy="80" rx="14" ry="6" fill="rgba(255,255,255,0.3)"/>
+                        <svg viewBox="0 0 100 170" width="90" height="150">
+                            <rect x="38" y="0" width="24" height="12" rx="3" fill="#f0ebe8"/>
+                            <rect x="35" y="10" width="30" height="6" rx="2" fill="#e8e2de"/>
+                            <rect x="28" y="14" width="44" height="38" rx="12" fill="#c8b8d4"/>
+                            <circle cx="30" cy="18" r="10" fill="#c8b8d4"/>
+                            <circle cx="70" cy="18" r="10" fill="#c8b8d4"/>
+                            <line x1="38" y1="28" x2="44" y2="34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="44" y1="28" x2="38" y2="34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="56" y1="28" x2="62" y2="34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="62" y1="28" x2="56" y2="34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+                            <ellipse cx="50" cy="42" rx="8" ry="5" fill="#b8a6c8"/>
+                            <rect x="26" y="52" width="48" height="56" rx="6" fill="#c8b8d4"/>
+                            <rect x="14" y="56" width="16" height="36" rx="7" fill="#c8b8d4"/>
+                            <rect x="70" y="56" width="16" height="36" rx="7" fill="#c8b8d4"/>
+                            <rect x="28" y="108" width="20" height="32" rx="6" fill="#c8b8d4"/>
+                            <rect x="52" y="108" width="20" height="32" rx="6" fill="#c8b8d4"/>
+                            <ellipse cx="50" cy="78" rx="12" ry="8" fill="rgba(255,255,255,0.25)"/>
                         </svg>
                     </div>
                     <h3>Blueberry</h3>
@@ -1129,26 +1127,23 @@
                 </div>
                 <div class="flavour-card pistachio">
                     <div class="flavour-swatch">
-                        <svg viewBox="0 0 120 160" width="90" height="120">
-                            <defs>
-                                <linearGradient id="pkG" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#c8d870"/>
-                                    <stop offset="100%" stop-color="#8fb83a"/>
-                                </linearGradient>
-                            </defs>
-                            <circle cx="60" cy="32" r="28" fill="url(#pkG)"/>
-                            <circle cx="42" cy="18" r="11" fill="url(#pkG)"/>
-                            <circle cx="78" cy="18" r="11" fill="url(#pkG)"/>
-                            <rect x="34" y="55" width="52" height="52" rx="10" fill="url(#pkG)"/>
-                            <rect x="22" y="58" width="16" height="36" rx="7" fill="url(#pkG)"/>
-                            <rect x="82" y="58" width="16" height="36" rx="7" fill="url(#pkG)"/>
-                            <rect x="36" y="110" width="18" height="28" rx="7" fill="url(#pkG)"/>
-                            <rect x="66" y="110" width="18" height="28" rx="7" fill="url(#pkG)"/>
-                            <line x1="50" y1="28" x2="55" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="55" y1="28" x2="50" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="65" y1="28" x2="70" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="70" y1="28" x2="65" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-                            <ellipse cx="60" cy="80" rx="14" ry="6" fill="rgba(255,255,255,0.3)"/>
+                        <svg viewBox="0 0 100 170" width="90" height="150">
+                            <rect x="38" y="0" width="24" height="12" rx="3" fill="#f0ebe8"/>
+                            <rect x="35" y="10" width="30" height="6" rx="2" fill="#e8e2de"/>
+                            <rect x="28" y="14" width="44" height="38" rx="12" fill="#d4dfa0"/>
+                            <circle cx="30" cy="18" r="10" fill="#d4dfa0"/>
+                            <circle cx="70" cy="18" r="10" fill="#d4dfa0"/>
+                            <line x1="38" y1="28" x2="44" y2="34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="44" y1="28" x2="38" y2="34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="56" y1="28" x2="62" y2="34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="62" y1="28" x2="56" y2="34" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+                            <ellipse cx="50" cy="42" rx="8" ry="5" fill="#c5d08e"/>
+                            <rect x="26" y="52" width="48" height="56" rx="6" fill="#d4dfa0"/>
+                            <rect x="14" y="56" width="16" height="36" rx="7" fill="#d4dfa0"/>
+                            <rect x="70" y="56" width="16" height="36" rx="7" fill="#d4dfa0"/>
+                            <rect x="28" y="108" width="20" height="32" rx="6" fill="#d4dfa0"/>
+                            <rect x="52" y="108" width="20" height="32" rx="6" fill="#d4dfa0"/>
+                            <ellipse cx="50" cy="78" rx="12" ry="8" fill="rgba(255,255,255,0.25)"/>
                         </svg>
                     </div>
                     <h3>Pistachio Kulfi</h3>
