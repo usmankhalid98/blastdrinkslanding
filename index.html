@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blast Drinks | Wholesale</title>
+    <title>Blast Drinks | Stock the Drink Everyone Wants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,59 +15,56 @@
         }
 
         :root {
-            --pink: #f0b0be;
-            --pink-soft: #f8d5dd;
-            --pink-bg: #fae3e8;
-            --blueberry: #baa4be;
-            --blueberry-soft: #d9cedd;
-            --blueberry-bg: #e8dee9;
-            --pistachio: #c5cc8e;
-            --pistachio-soft: #dde3b5;
-            --pistachio-bg: #eaedce;
-            --peach: #e8be96;
-            --peach-soft: #f0d4b5;
-            --lilac: #c9b3cc;
-            --gradient-hero: linear-gradient(165deg, #e8dee9 0%, #f8d5dd 35%, #f0d4b5 70%, #eaedce 100%);
-            --gradient-alt: linear-gradient(165deg, #f8d5dd 0%, #d9cedd 50%, #dde3b5 100%);
-            --card: rgba(255,255,255,0.75);
-            --card-solid: #ffffff;
+            --pink: #f5c2cc;
+            --pink-vibrant: #e8899e;
+            --pink-soft: #fad9e0;
+            --pink-bg: #fce8ec;
+            --blueberry: #c8b8d4;
+            --blueberry-vibrant: #a68fbe;
+            --blueberry-soft: #ddd2e6;
+            --blueberry-bg: #ece5f0;
+            --pistachio: #d4dfa0;
+            --pistachio-vibrant: #b5c66e;
+            --pistachio-soft: #e4ebc0;
+            --pistachio-bg: #eff2da;
+            --peach: #f4c4a0;
+            --peach-soft: #f8dcc4;
+            --candy: #ffc8dd;
             --text: #2a2430;
             --text-secondary: #5e5568;
-            --text-tertiary: #9a90a5;
-            --border: rgba(0,0,0,0.06);
-            --border-hover: rgba(0,0,0,0.1);
-            --shadow-sm: 0 1px 4px rgba(0,0,0,0.04);
-            --shadow: 0 4px 24px rgba(0,0,0,0.06);
-            --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
+            --text-light: #fff;
+            --card: rgba(255,255,255,0.85);
+            --shadow: 0 8px 32px rgba(42, 36, 48, 0.12);
+            --shadow-lg: 0 16px 48px rgba(42, 36, 48, 0.15);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--pink-bg);
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fae3e8;
             color: var(--text);
-            line-height: 1.65;
+            line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1060px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* Nav */
+        /* ===== NAV ===== */
         .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(250, 227, 232, 0.85);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(240, 176, 190, 0.3);
-            padding: 16px 0;
+            border-bottom: 2px solid rgba(240, 176, 190, 0.3);
+            padding: 12px 0;
         }
 
         .nav .container {
@@ -74,93 +74,189 @@
         }
 
         .logo svg {
-            height: 32px;
+            height: 36px;
             width: auto;
             display: block;
         }
 
         .nav-cta {
-            background: var(--text);
+            background: linear-gradient(135deg, var(--pink-vibrant), var(--blueberry-vibrant));
             color: #fff;
             border: none;
-            padding: 10px 26px;
-            border-radius: 8px;
-            font-weight: 600;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 800;
             font-size: 0.85rem;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s;
             text-decoration: none;
-            letter-spacing: 0.2px;
+            font-family: 'Nunito', sans-serif;
+            letter-spacing: 0.3px;
         }
 
         .nav-cta:hover {
-            opacity: 0.85;
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(244, 114, 168, 0.4);
         }
 
-        /* Hero */
+        /* ===== HERO ===== */
         .hero {
-            padding: 140px 0 60px;
+            padding: 160px 0 100px;
             text-align: center;
-            background: var(--gradient-hero);
+            background: linear-gradient(180deg, #fce4ec 0%, #f8d5dd 30%, #e8dee9 60%, #eaedce 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(240,176,190,0.3) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            right: -60px;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(168,194,74,0.25) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-bubbles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
         }
 
         .hero-label {
             display: inline-block;
-            font-size: 0.72rem;
-            font-weight: 600;
+            background: linear-gradient(135deg, var(--pink-vibrant), var(--blueberry-vibrant));
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--text-tertiary);
-            margin-bottom: 24px;
+            padding: 6px 20px;
+            border-radius: 50px;
+            margin-bottom: 28px;
         }
 
         .hero h1 {
-            font-size: clamp(2.4rem, 5vw, 3.6rem);
-            font-weight: 800;
-            line-height: 1.12;
-            margin-bottom: 22px;
-            letter-spacing: -1.5px;
+            font-family: 'Lilita One', 'Nunito', sans-serif;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 24px;
             color: var(--text);
         }
 
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--pink-vibrant), var(--blueberry-vibrant));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .hero-sub {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-secondary);
-            max-width: 480px;
-            margin: 0 auto 44px;
+            max-width: 520px;
+            margin: 0 auto 40px;
             line-height: 1.7;
+            font-weight: 600;
+        }
+
+        .hero-bottles {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .hero-bottle {
+            animation: bobble 3s ease-in-out infinite;
+        }
+
+        .hero-bottle:nth-child(2) { animation-delay: 0.5s; }
+        .hero-bottle:nth-child(3) { animation-delay: 1s; }
+
+        @keyframes bobble {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
         }
 
         .hero-cta {
             display: inline-block;
-            background: var(--text);
+            background: linear-gradient(135deg, var(--pink-vibrant), var(--blueberry-vibrant));
             color: #fff;
-            padding: 14px 36px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
+            padding: 16px 44px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s;
+            font-family: 'Nunito', sans-serif;
+            box-shadow: 0 6px 24px rgba(244, 114, 168, 0.35);
         }
 
         .hero-cta:hover {
-            opacity: 0.85;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(244, 114, 168, 0.5);
         }
 
-        /* Video */
+        /* ===== VIDEO ===== */
         .video-section {
-            padding: 20px 0 100px;
-            background: linear-gradient(180deg, var(--peach) 0%, var(--blueberry-bg) 100%);
+            padding: 0 0 80px;
+            background: linear-gradient(180deg, #eaedce 0%, #fce4ec 100%);
+            position: relative;
+        }
+
+        .video-header {
+            text-align: center;
+            margin-bottom: 36px;
+            padding-top: 60px;
+        }
+
+        .video-header h2 {
+            font-family: 'Lilita One', sans-serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: var(--text);
         }
 
         .video-wrapper {
             position: relative;
             max-width: 760px;
             margin: 0 auto;
-            border-radius: 16px;
+            border-radius: 24px;
             overflow: hidden;
             box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(255,255,255,0.5);
+            border: 4px solid rgba(255,255,255,0.7);
             aspect-ratio: 16/9;
             background: linear-gradient(135deg, var(--pink-soft), var(--pistachio-soft), var(--blueberry-soft));
         }
@@ -172,11 +268,23 @@
             display: block;
         }
 
-        /* Stats */
+        /* ===== STATS / SOCIAL PROOF BAR ===== */
         .stats {
-            padding: 70px 0;
-            background: var(--blueberry-bg);
-            border-bottom: 1px solid var(--border);
+            padding: 50px 0;
+            background: linear-gradient(135deg, var(--pink-vibrant), var(--blueberry-vibrant), var(--pistachio-vibrant));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='8' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");
+            pointer-events: none;
         }
 
         .stats-grid {
@@ -184,143 +292,180 @@
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 32px;
             text-align: center;
+            position: relative;
         }
 
         .stat-item .stat-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            letter-spacing: -1px;
+            font-family: 'Lilita One', sans-serif;
+            font-size: 2.6rem;
+            color: #fff;
             margin-bottom: 4px;
-            color: var(--text);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
         .stat-item .stat-label {
-            font-size: 0.78rem;
-            color: var(--text-tertiary);
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.85);
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
-        /* Sections */
+        /* ===== SECTION COMMON ===== */
         .section {
             padding: 90px 0;
-        }
-
-        .section.pink-bg {
-            background: var(--pink-bg);
-        }
-
-        .section.lilac-bg {
-            background: var(--gradient-alt);
-        }
-
-        .section.green-bg {
-            background: var(--pistachio-bg);
+            position: relative;
         }
 
         .section-label {
-            display: block;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--pink-vibrant), var(--blueberry-vibrant));
+            color: #fff;
             font-size: 0.7rem;
-            font-weight: 600;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2.5px;
-            color: var(--text-tertiary);
-            margin-bottom: 14px;
+            letter-spacing: 2px;
+            padding: 5px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+
+        .section-label-wrap {
             text-align: center;
         }
 
         .section-title {
-            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-            font-weight: 800;
+            font-family: 'Lilita One', sans-serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
             margin-bottom: 14px;
             text-align: center;
-            letter-spacing: -1px;
+            color: var(--text);
         }
 
         .section-desc {
             color: var(--text-secondary);
-            font-size: 1rem;
-            max-width: 460px;
+            font-size: 1.05rem;
+            max-width: 480px;
             margin: 0 auto 50px;
             text-align: center;
             line-height: 1.7;
+            font-weight: 600;
         }
 
-        /* Why Stock */
+        /* ===== WHY STOCK ===== */
+        .why-stock {
+            background: linear-gradient(180deg, #fce4ec 0%, #f8d5dd 100%);
+        }
+
         .reasons-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
         .reason-card {
             background: var(--card);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.6);
-            border-radius: 14px;
+            border: 2px solid rgba(255,255,255,0.7);
+            border-radius: 20px;
             padding: 32px;
-            transition: all 0.25s;
-            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            position: relative;
+            overflow: hidden;
         }
+
+        .reason-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            opacity: 0.15;
+            transition: all 0.3s;
+        }
+
+        .reason-card:nth-child(1)::before { background: var(--pink-vibrant); }
+        .reason-card:nth-child(2)::before { background: var(--blueberry-vibrant); }
+        .reason-card:nth-child(3)::before { background: var(--pistachio-vibrant); }
+        .reason-card:nth-child(4)::before { background: var(--peach); }
 
         .reason-card:hover {
-            border-color: var(--pink);
+            transform: translateY(-4px);
             box-shadow: var(--shadow);
-            transform: translateY(-2px);
+            border-color: var(--pink);
         }
 
-        .reason-number {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--blueberry);
-            letter-spacing: 1px;
+        .reason-icon {
+            font-size: 2rem;
             margin-bottom: 14px;
         }
 
         .reason-card h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
+            font-size: 1.1rem;
+            font-weight: 800;
             margin-bottom: 8px;
-            letter-spacing: -0.3px;
         }
 
         .reason-card p {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             line-height: 1.65;
+            font-weight: 600;
         }
 
-        /* Flavours */
+        /* ===== FLAVOURS ===== */
+        .flavours-section {
+            background: linear-gradient(180deg, #f8d5dd 0%, #e8dee9 50%, #eaedce 100%);
+            overflow: hidden;
+        }
+
         .flavours-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
         }
 
         .flavour-card {
             background: var(--card);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.6);
-            border-radius: 16px;
-            padding: 40px 28px 32px;
+            border: 2px solid rgba(255,255,255,0.7);
+            border-radius: 24px;
+            padding: 44px 28px 36px;
             text-align: center;
-            transition: all 0.25s;
-            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            position: relative;
+            overflow: hidden;
         }
+
+        .flavour-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            transition: height 0.3s;
+        }
+
+        .flavour-card.candyfloss::after { background: linear-gradient(90deg, var(--pink), var(--pink-vibrant)); }
+        .flavour-card.blueberry::after { background: linear-gradient(90deg, var(--blueberry), var(--blueberry-vibrant)); }
+        .flavour-card.pistachio::after { background: linear-gradient(90deg, var(--pistachio), var(--pistachio-vibrant)); }
 
         .flavour-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
         }
 
-        .flavour-card.candyfloss:hover { border-color: var(--pink); }
-        .flavour-card.blueberry:hover { border-color: var(--blueberry); }
-        .flavour-card.pistachio:hover { border-color: var(--pistachio); }
+        .flavour-card:hover::after {
+            height: 6px;
+        }
 
         .flavour-swatch {
-            width: 100px;
-            height: 120px;
+            width: 110px;
+            height: 130px;
             margin: 0 auto 22px;
             display: flex;
             align-items: center;
@@ -328,19 +473,18 @@
         }
 
         .flavour-card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            letter-spacing: -0.3px;
+            font-family: 'Lilita One', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
         }
 
         .flavour-tag {
             display: inline-block;
-            padding: 3px 12px;
-            border-radius: 6px;
-            font-size: 0.72rem;
-            font-weight: 600;
-            margin-bottom: 12px;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            margin-bottom: 14px;
             letter-spacing: 0.3px;
         }
 
@@ -350,32 +494,200 @@
 
         .flavour-card .desc {
             color: var(--text-secondary);
-            font-size: 0.88rem;
-            line-height: 1.6;
+            font-size: 0.92rem;
+            line-height: 1.65;
+            font-weight: 600;
         }
 
-        /* Pre-order form */
+        /* ===== OFFER BANNER ===== */
+        .offer-section {
+            background: linear-gradient(135deg, #2a2430 0%, #3d2f4a 100%);
+            padding: 90px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='12' fill='rgba(244,114,168,0.06)'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .offer-box {
+            max-width: 640px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .offer-label {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--pink-vibrant), var(--peach));
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 20px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+        }
+
+        .offer-title {
+            font-family: 'Lilita One', sans-serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            color: #fff;
+            margin-bottom: 18px;
+        }
+
+        .offer-value {
+            font-family: 'Lilita One', sans-serif;
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--pink-vibrant), var(--peach));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .offer-desc {
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 36px;
+            font-weight: 600;
+        }
+
+        .offer-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--pink-vibrant), var(--peach));
+            color: #fff;
+            padding: 16px 44px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Nunito', sans-serif;
+            box-shadow: 0 6px 24px rgba(244, 114, 168, 0.3);
+        }
+
+        .offer-cta:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(244, 114, 168, 0.5);
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-section {
+            background: linear-gradient(180deg, #eaedce 0%, #e8dee9 50%, #fce4ec 100%);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--card);
+            border: 2px solid rgba(255,255,255,0.7);
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-result {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--pink-vibrant), var(--blueberry-vibrant));
+            color: #fff;
+            font-size: 0.82rem;
+            font-weight: 800;
+            padding: 5px 16px;
+            border-radius: 50px;
+            margin-bottom: 18px;
+        }
+
+        .testimonial-quote {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .testimonial-author {
+            font-weight: 800;
+            font-size: 0.92rem;
+        }
+
+        .testimonial-location {
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .testimonial-img {
+            margin-top: 18px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .testimonial-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== PREORDER FORM ===== */
         .preorder {
             padding: 100px 0;
-            background: var(--gradient-hero);
+            background: linear-gradient(180deg, #fce4ec 0%, #f8d5dd 40%, #e8dee9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .preorder::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(244,114,168,0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .preorder-box {
-            max-width: 520px;
+            max-width: 540px;
             margin: 0 auto;
-            background: var(--card-solid);
-            border: 1px solid rgba(255,255,255,0.8);
-            border-radius: 18px;
+            background: #fff;
+            border: 2px solid rgba(255,255,255,0.9);
+            border-radius: 28px;
             padding: 48px 40px;
             box-shadow: var(--shadow-lg);
+            position: relative;
         }
 
         .preorder-box h2 {
-            font-size: 1.8rem;
-            font-weight: 800;
+            font-family: 'Lilita One', sans-serif;
+            font-size: 2rem;
             text-align: center;
-            margin-bottom: 6px;
-            letter-spacing: -0.5px;
+            margin-bottom: 8px;
         }
 
         .preorder-box .subtitle {
@@ -383,6 +695,8 @@
             color: var(--text-secondary);
             margin-bottom: 34px;
             font-size: 0.92rem;
+            font-weight: 600;
+            line-height: 1.6;
         }
 
         .form-group {
@@ -391,35 +705,36 @@
 
         .form-group label {
             display: block;
-            font-size: 0.78rem;
-            font-weight: 600;
+            font-size: 0.82rem;
+            font-weight: 800;
             margin-bottom: 6px;
-            color: var(--text-secondary);
-            letter-spacing: 0.3px;
+            color: var(--text);
         }
 
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 12px 14px;
-            background: var(--pink-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
+            padding: 13px 16px;
+            background: #faf5f7;
+            border: 2px solid #f0e4e8;
+            border-radius: 12px;
             color: var(--text);
             font-size: 0.92rem;
             transition: all 0.2s;
-            font-family: inherit;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
         }
 
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--pink);
-            box-shadow: 0 0 0 3px rgba(240, 176, 190, 0.25);
+            border-color: var(--pink-vibrant);
+            box-shadow: 0 0 0 4px rgba(244, 114, 168, 0.15);
+            background: #fff;
         }
 
         .form-group input::placeholder {
-            color: var(--text-tertiary);
+            color: #c0b0b8;
         }
 
         .form-group select {
@@ -437,191 +752,194 @@
         }
 
         .form-submit {
-            margin-top: 26px;
+            margin-top: 24px;
+        }
+
+        .btn-pay {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--pink-vibrant), var(--blueberry-vibrant));
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Nunito', sans-serif;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(244, 114, 168, 0.3);
+        }
+
+        .btn-pay:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(244, 114, 168, 0.4);
         }
 
         .btn-submit {
             display: block;
             width: 100%;
-            background: var(--text);
+            background: linear-gradient(135deg, var(--pistachio-vibrant), var(--pistachio));
             color: #fff;
             border: none;
-            padding: 14px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 0.92rem;
+            padding: 15px;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 0.95rem;
             cursor: pointer;
-            transition: all 0.2s;
-            letter-spacing: 0.2px;
+            transition: all 0.3s;
+            font-family: 'Nunito', sans-serif;
+            box-shadow: 0 4px 16px rgba(143, 184, 58, 0.3);
         }
 
-        .btn-submit:hover {
-            opacity: 0.85;
+        .btn-submit:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(143, 184, 58, 0.4);
+        }
+
+        .btn-submit:disabled {
+            background: #d0c8d4;
+            box-shadow: none;
         }
 
         .form-note {
             text-align: center;
-            margin-top: 14px;
-            font-size: 0.76rem;
-            color: var(--text-tertiary);
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 600;
             line-height: 1.5;
         }
 
-        /* Offer */
-        .offer-section {
-            background: var(--pistachio-bg);
-        }
-
-        .offer-box {
-            max-width: 620px;
-            margin: 0 auto;
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 40px 0;
             text-align: center;
+            background: linear-gradient(135deg, #2a2430, #3d2f4a);
+            color: rgba(255,255,255,0.7);
         }
 
-        .offer-label {
-            display: inline-block;
-            background: var(--pistachio);
-            color: #fff;
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            padding: 5px 16px;
-            border-radius: 6px;
-            margin-bottom: 20px;
+        .footer-logo svg {
+            height: 28px;
+            width: auto;
+            margin-bottom: 12px;
         }
 
-        .offer-title {
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
+        .footer-brand {
             font-weight: 800;
-            letter-spacing: -0.8px;
-            margin-bottom: 14px;
-        }
-
-        .offer-desc {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
-
-        /* Testimonials */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .testimonial-card {
-            background: var(--card);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.6);
-            border-radius: 14px;
-            padding: 30px;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.25s;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-        }
-
-        .testimonial-result {
-            display: inline-block;
-            background: var(--pink);
-            color: #fff;
-            font-size: 0.78rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 6px;
-            margin-bottom: 16px;
-        }
-
-        .testimonial-quote {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.65;
-            margin-bottom: 18px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            font-weight: 700;
             font-size: 0.88rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 4px;
         }
 
-        .testimonial-location {
-            color: var(--text-tertiary);
-            font-size: 0.78rem;
+        .footer p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.82rem;
+            font-weight: 600;
         }
 
-        .testimonial-img {
-            margin-top: 18px;
-            border-radius: 10px;
+        .footer-links {
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--pink);
+        }
+
+        /* ===== PRODUCT GALLERY ===== */
+        .gallery-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #fce8ec 0%, #ece5f0 50%, #eff2da 100%);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
             overflow: hidden;
-            border: 1px solid var(--border);
+            border: 3px solid rgba(255,255,255,0.8);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            aspect-ratio: 3/4;
         }
 
-        .testimonial-img img {
+        .gallery-item:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-product-img {
+            max-width: 420px;
+            margin: 0 auto 40px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            border: 4px solid rgba(255,255,255,0.7);
+        }
+
+        .hero-product-img img {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        /* Footer */
-        .footer {
-            padding: 32px 0;
-            text-align: center;
-            background: var(--blueberry-bg);
-            border-top: 1px solid var(--border);
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .footer-brand {
-            font-weight: 700;
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            margin-bottom: 6px;
-        }
-
-        .footer p {
-            color: var(--text-tertiary);
-            font-size: 0.78rem;
-        }
-
-        .footer-links {
-            margin-top: 8px;
-        }
-
-        .footer-links a {
-            color: var(--text-tertiary);
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.78rem;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--text);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(16px); }
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .animate { opacity: 0; animation: fadeIn 0.5s ease forwards; }
+        .animate { opacity: 0; animation: fadeUp 0.6s ease forwards; }
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .form-row { grid-template-columns: 1fr; }
             .preorder-box { padding: 32px 22px; }
             .reasons-grid,
             .flavours-grid { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            .hero-bottles svg { width: 70px; height: auto; }
+            .hero-bottles { gap: 14px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .hero-bottles svg { width: 56px; height: auto; }
+            .hero-bottles { gap: 10px; }
         }
     </style>
 </head>
@@ -637,19 +955,128 @@
 
     <!-- Hero -->
     <section class="hero">
-        <div class="container">
-            <span class="hero-label animate">Wholesale Enquiries</span>
-            <h1 class="animate delay-1">Stock the drink<br>your customers want.</h1>
-            <p class="hero-sub animate delay-2">Blast Drinks is a flavoured drinks brand in signature bear-shaped bottles. We're looking for retail partners across the UK to stock and grow with us.</p>
-            <a href="#preorder" class="hero-cta animate delay-3">Place a Pre-Order</a>
+        <div class="hero-bubbles">
+            <div class="bubble" style="width:120px;height:120px;background:var(--pink);top:15%;left:5%;animation-delay:0s;"></div>
+            <div class="bubble" style="width:80px;height:80px;background:var(--blueberry);top:25%;right:8%;animation-delay:1s;"></div>
+            <div class="bubble" style="width:60px;height:60px;background:var(--pistachio);bottom:20%;left:12%;animation-delay:2s;"></div>
+            <div class="bubble" style="width:90px;height:90px;background:var(--peach);bottom:30%;right:15%;animation-delay:0.5s;"></div>
+            <div class="bubble" style="width:50px;height:50px;background:var(--pink-vibrant);top:50%;left:45%;animation-delay:1.5s;"></div>
+        </div>
+        <div class="container" style="position:relative;z-index:2;">
+            <span class="hero-label animate">Wholesale Partner Enquiries</span>
+            <h1 class="animate delay-1">Stock the drink<br>your customers <span class="highlight">can't resist.</span></h1>
+            <p class="hero-sub animate delay-2">Blast Drinks — flavoured drinks in iconic bear-shaped bottles. Three bold flavours, massive social buzz, and real results for retailers across the UK.</p>
+
+            <div class="hero-bottles animate delay-3">
+                <!-- Candyfloss Bear Bottle -->
+                <div class="hero-bottle">
+                    <svg viewBox="0 0 100 150" width="90" height="130">
+                        <defs>
+                            <linearGradient id="pinkG" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#f9c0d0"/>
+                                <stop offset="100%" stop-color="#f472a8"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="28" r="24" fill="url(#pinkG)"/>
+                        <circle cx="35" cy="14" r="9" fill="url(#pinkG)"/>
+                        <circle cx="65" cy="14" r="9" fill="url(#pinkG)"/>
+                        <rect x="30" y="48" width="40" height="46" rx="8" fill="url(#pinkG)"/>
+                        <rect x="20" y="52" width="14" height="30" rx="6" fill="url(#pinkG)"/>
+                        <rect x="66" y="52" width="14" height="30" rx="6" fill="url(#pinkG)"/>
+                        <rect x="32" y="96" width="15" height="24" rx="6" fill="url(#pinkG)"/>
+                        <rect x="53" y="96" width="15" height="24" rx="6" fill="url(#pinkG)"/>
+                        <line x1="42" y1="24" x2="47" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="47" y1="24" x2="42" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="53" y1="24" x2="58" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="58" y1="24" x2="53" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <ellipse cx="50" cy="70" rx="12" ry="6" fill="rgba(255,255,255,0.3)" />
+                    </svg>
+                </div>
+                <!-- Blueberry Bear Bottle -->
+                <div class="hero-bottle">
+                    <svg viewBox="0 0 100 150" width="90" height="130">
+                        <defs>
+                            <linearGradient id="blueG" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#c4aad4"/>
+                                <stop offset="100%" stop-color="#8b5fbf"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="28" r="24" fill="url(#blueG)"/>
+                        <circle cx="35" cy="14" r="9" fill="url(#blueG)"/>
+                        <circle cx="65" cy="14" r="9" fill="url(#blueG)"/>
+                        <rect x="30" y="48" width="40" height="46" rx="8" fill="url(#blueG)"/>
+                        <rect x="20" y="52" width="14" height="30" rx="6" fill="url(#blueG)"/>
+                        <rect x="66" y="52" width="14" height="30" rx="6" fill="url(#blueG)"/>
+                        <rect x="32" y="96" width="15" height="24" rx="6" fill="url(#blueG)"/>
+                        <rect x="53" y="96" width="15" height="24" rx="6" fill="url(#blueG)"/>
+                        <line x1="42" y1="24" x2="47" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="47" y1="24" x2="42" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="53" y1="24" x2="58" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="58" y1="24" x2="53" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <ellipse cx="50" cy="70" rx="12" ry="6" fill="rgba(255,255,255,0.3)" />
+                    </svg>
+                </div>
+                <!-- Pistachio Bear Bottle -->
+                <div class="hero-bottle">
+                    <svg viewBox="0 0 100 150" width="90" height="130">
+                        <defs>
+                            <linearGradient id="greenG" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#c8d870"/>
+                                <stop offset="100%" stop-color="#8fb83a"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="28" r="24" fill="url(#greenG)"/>
+                        <circle cx="35" cy="14" r="9" fill="url(#greenG)"/>
+                        <circle cx="65" cy="14" r="9" fill="url(#greenG)"/>
+                        <rect x="30" y="48" width="40" height="46" rx="8" fill="url(#greenG)"/>
+                        <rect x="20" y="52" width="14" height="30" rx="6" fill="url(#greenG)"/>
+                        <rect x="66" y="52" width="14" height="30" rx="6" fill="url(#greenG)"/>
+                        <rect x="32" y="96" width="15" height="24" rx="6" fill="url(#greenG)"/>
+                        <rect x="53" y="96" width="15" height="24" rx="6" fill="url(#greenG)"/>
+                        <line x1="42" y1="24" x2="47" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="47" y1="24" x2="42" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="53" y1="24" x2="58" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <line x1="58" y1="24" x2="53" y2="30" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        <ellipse cx="50" cy="70" rx="12" ry="6" fill="rgba(255,255,255,0.3)" />
+                    </svg>
+                </div>
+            </div>
+
+            <a href="#preorder" class="hero-cta animate delay-4">Place a Pre-Order</a>
         </div>
     </section>
 
     <!-- Video -->
     <section class="video-section">
         <div class="container">
-            <div class="video-wrapper animate delay-3">
+            <div class="video-header">
+                <h2>See Blast in Action</h2>
+            </div>
+            <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/AQfB48LqCz8" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-label-wrap"><span class="section-label">The Product</span></div>
+            <h2 class="section-title">The bottle everyone's talking about</h2>
+            <p class="section-desc">Bearbrick-style bottles with X X eyes. Bold, collectible, and impossible to ignore on the shelf.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="blast-holding.jpg" alt="All three Blast Drinks bear bottles held together">
+                </div>
+                <div class="gallery-item">
+                    <img src="blast-lineup-pastel.jpg" alt="Blast Drinks bottles lined up on pastel background">
+                </div>
+                <div class="gallery-item">
+                    <img src="blast-pink-closeup.jpg" alt="Blast Drinks Candyfloss bottle close-up">
+                </div>
+                <div class="gallery-item">
+                    <img src="blast-shelf.jpg" alt="Blast Drinks bottles on a shelf — pink, lavender, and green">
+                </div>
             </div>
         </div>
     </section>
@@ -660,77 +1087,84 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">1M+</div>
-                    <div class="stat-label">Views on TikTok</div>
+                    <div class="stat-label">TikTok Views</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">3</div>
-                    <div class="stat-label">Flavours</div>
+                    <div class="stat-label">Bold Flavours</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">500ml</div>
-                    <div class="stat-label">Per Bottle</div>
+                    <div class="stat-label">Bear Bottle</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">UK</div>
-                    <div class="stat-label">Based & Shipped</div>
+                    <div class="stat-label">Made & Shipped</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Stock Blast -->
-    <section class="section pink-bg">
+    <section class="section why-stock">
         <div class="container">
-            <span class="section-label">Partnership</span>
-            <h2 class="section-title">Why partner with Blast</h2>
-            <p class="section-desc">More than a supplier — a partner invested in your store's success. Great product, strong marketing, real support.</p>
+            <div class="section-label-wrap"><span class="section-label">Partnership</span></div>
+            <h2 class="section-title">Why retailers choose Blast</h2>
+            <p class="section-desc">More than a supplier — a partner invested in your store's success. Great product, viral marketing, real support.</p>
             <div class="reasons-grid">
                 <div class="reason-card">
-                    <div class="reason-number">01</div>
-                    <h3>Standout shelf presence</h3>
-                    <p>The bear-shaped bottle is unlike anything else in the chiller. Customers pick it up before they even know the flavour.</p>
+                    <div class="reason-icon">🧸</div>
+                    <h3>Iconic bear-shaped bottles</h3>
+                    <p>Unlike anything else in the chiller. Customers pick it up before they even know the flavour — the packaging sells itself.</p>
                 </div>
                 <div class="reason-card">
-                    <div class="reason-number">02</div>
-                    <h3>Built-in demand</h3>
-                    <p>Blast already has a growing following on social media. Customers are searching for stockists — make sure you're one of them.</p>
+                    <div class="reason-icon">📱</div>
+                    <h3>Built-in social demand</h3>
+                    <p>Blast already has a growing following. Customers are searching for stockists — make sure your shop is one of them.</p>
                 </div>
                 <div class="reason-card">
-                    <div class="reason-number">03</div>
+                    <div class="reason-icon">💰</div>
                     <h3>Strong margins</h3>
                     <p>Competitive wholesale pricing that gives you healthy margins while keeping the RRP accessible for your customers.</p>
                 </div>
                 <div class="reason-card">
-                    <div class="reason-number">04</div>
+                    <div class="reason-icon">🔁</div>
                     <h3>Repeat purchases</h3>
-                    <p>Three distinct flavours that keep customers coming back to try the full range. This isn't a one-time novelty buy.</p>
+                    <p>Three distinct flavours that keep customers coming back for the full range. This isn't a one-time novelty buy.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Flavours -->
-    <section class="section lilac-bg">
+    <section class="section flavours-section">
         <div class="container">
-            <span class="section-label">The Range</span>
+            <div class="section-label-wrap"><span class="section-label">The Range</span></div>
             <h2 class="section-title">Three flavours, one iconic bottle</h2>
-            <p class="section-desc">Each flavour is crafted to appeal to a wide audience. Smooth, distinctive, and easy to drink.</p>
+            <p class="section-desc">Each flavour crafted to appeal to a wide audience. Smooth, distinctive, and easy to drink.</p>
             <div class="flavours-grid">
                 <div class="flavour-card candyfloss">
-                    <div class="flavour-swatch candyfloss">
-                        <svg viewBox="0 0 120 160" width="80" height="110">
-                            <circle cx="60" cy="32" r="28" fill="var(--pink)"/>
-                            <circle cx="42" cy="20" r="10" fill="var(--pink)"/>
-                            <circle cx="78" cy="20" r="10" fill="var(--pink)"/>
-                            <rect x="36" y="55" width="48" height="50" rx="8" fill="var(--pink)"/>
-                            <rect x="24" y="58" width="16" height="36" rx="6" fill="var(--pink)"/>
-                            <rect x="80" y="58" width="16" height="36" rx="6" fill="var(--pink)"/>
-                            <rect x="38" y="108" width="18" height="28" rx="6" fill="var(--pink)"/>
-                            <rect x="64" y="108" width="18" height="28" rx="6" fill="var(--pink)"/>
-                            <line x1="50" y1="28" x2="56" y2="34" stroke="#2a2430" stroke-width="3" stroke-linecap="round"/>
-                            <line x1="56" y1="28" x2="50" y2="34" stroke="#2a2430" stroke-width="3" stroke-linecap="round"/>
-                            <line x1="64" y1="28" x2="70" y2="34" stroke="#2a2430" stroke-width="3" stroke-linecap="round"/>
-                            <line x1="70" y1="28" x2="64" y2="34" stroke="#2a2430" stroke-width="3" stroke-linecap="round"/>
+                    <div class="flavour-swatch">
+                        <svg viewBox="0 0 120 160" width="90" height="120">
+                            <defs>
+                                <linearGradient id="cfG" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#f9c0d0"/>
+                                    <stop offset="100%" stop-color="#f472a8"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="60" cy="32" r="28" fill="url(#cfG)"/>
+                            <circle cx="42" cy="18" r="11" fill="url(#cfG)"/>
+                            <circle cx="78" cy="18" r="11" fill="url(#cfG)"/>
+                            <rect x="34" y="55" width="52" height="52" rx="10" fill="url(#cfG)"/>
+                            <rect x="22" y="58" width="16" height="36" rx="7" fill="url(#cfG)"/>
+                            <rect x="82" y="58" width="16" height="36" rx="7" fill="url(#cfG)"/>
+                            <rect x="36" y="110" width="18" height="28" rx="7" fill="url(#cfG)"/>
+                            <rect x="66" y="110" width="18" height="28" rx="7" fill="url(#cfG)"/>
+                            <line x1="50" y1="28" x2="55" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="55" y1="28" x2="50" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="65" y1="28" x2="70" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="70" y1="28" x2="65" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                            <ellipse cx="60" cy="80" rx="14" ry="6" fill="rgba(255,255,255,0.3)"/>
                         </svg>
                     </div>
                     <h3>Candyfloss</h3>
@@ -738,20 +1172,27 @@
                     <p class="desc">Light, sweet, and nostalgic. A crowd favourite that appeals across all age groups.</p>
                 </div>
                 <div class="flavour-card blueberry">
-                    <div class="flavour-swatch blueberry">
-                        <svg viewBox="0 0 120 160" width="80" height="110">
-                            <circle cx="60" cy="32" r="28" fill="var(--blueberry)"/>
-                            <circle cx="42" cy="20" r="10" fill="var(--blueberry)"/>
-                            <circle cx="78" cy="20" r="10" fill="var(--blueberry)"/>
-                            <rect x="36" y="55" width="48" height="50" rx="8" fill="var(--blueberry)"/>
-                            <rect x="24" y="58" width="16" height="36" rx="6" fill="var(--blueberry)"/>
-                            <rect x="80" y="58" width="16" height="36" rx="6" fill="var(--blueberry)"/>
-                            <rect x="38" y="108" width="18" height="28" rx="6" fill="var(--blueberry)"/>
-                            <rect x="64" y="108" width="18" height="28" rx="6" fill="var(--blueberry)"/>
-                            <line x1="50" y1="28" x2="56" y2="34" stroke="#2a2430" stroke-width="3" stroke-linecap="round"/>
-                            <line x1="56" y1="28" x2="50" y2="34" stroke="#2a2430" stroke-width="3" stroke-linecap="round"/>
-                            <line x1="64" y1="28" x2="70" y2="34" stroke="#2a2430" stroke-width="3" stroke-linecap="round"/>
-                            <line x1="70" y1="28" x2="64" y2="34" stroke="#2a2430" stroke-width="3" stroke-linecap="round"/>
+                    <div class="flavour-swatch">
+                        <svg viewBox="0 0 120 160" width="90" height="120">
+                            <defs>
+                                <linearGradient id="bbG" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#c4aad4"/>
+                                    <stop offset="100%" stop-color="#8b5fbf"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="60" cy="32" r="28" fill="url(#bbG)"/>
+                            <circle cx="42" cy="18" r="11" fill="url(#bbG)"/>
+                            <circle cx="78" cy="18" r="11" fill="url(#bbG)"/>
+                            <rect x="34" y="55" width="52" height="52" rx="10" fill="url(#bbG)"/>
+                            <rect x="22" y="58" width="16" height="36" rx="7" fill="url(#bbG)"/>
+                            <rect x="82" y="58" width="16" height="36" rx="7" fill="url(#bbG)"/>
+                            <rect x="36" y="110" width="18" height="28" rx="7" fill="url(#bbG)"/>
+                            <rect x="66" y="110" width="18" height="28" rx="7" fill="url(#bbG)"/>
+                            <line x1="50" y1="28" x2="55" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="55" y1="28" x2="50" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="65" y1="28" x2="70" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="70" y1="28" x2="65" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                            <ellipse cx="60" cy="80" rx="14" ry="6" fill="rgba(255,255,255,0.3)"/>
                         </svg>
                     </div>
                     <h3>Blueberry</h3>
@@ -759,20 +1200,27 @@
                     <p class="desc">Bold blueberry with a clean, refreshing finish. The go-to for fruit drink lovers.</p>
                 </div>
                 <div class="flavour-card pistachio">
-                    <div class="flavour-swatch pistachio">
-                        <svg viewBox="0 0 120 160" width="80" height="110">
-                            <circle cx="60" cy="32" r="28" fill="var(--pistachio)"/>
-                            <circle cx="42" cy="20" r="10" fill="var(--pistachio)"/>
-                            <circle cx="78" cy="20" r="10" fill="var(--pistachio)"/>
-                            <rect x="36" y="55" width="48" height="50" rx="8" fill="var(--pistachio)"/>
-                            <rect x="24" y="58" width="16" height="36" rx="6" fill="var(--pistachio)"/>
-                            <rect x="80" y="58" width="16" height="36" rx="6" fill="var(--pistachio)"/>
-                            <rect x="38" y="108" width="18" height="28" rx="6" fill="var(--pistachio)"/>
-                            <rect x="64" y="108" width="18" height="28" rx="6" fill="var(--pistachio)"/>
-                            <line x1="50" y1="28" x2="56" y2="34" stroke="#2a2430" stroke-width="3" stroke-linecap="round"/>
-                            <line x1="56" y1="28" x2="50" y2="34" stroke="#2a2430" stroke-width="3" stroke-linecap="round"/>
-                            <line x1="64" y1="28" x2="70" y2="34" stroke="#2a2430" stroke-width="3" stroke-linecap="round"/>
-                            <line x1="70" y1="28" x2="64" y2="34" stroke="#2a2430" stroke-width="3" stroke-linecap="round"/>
+                    <div class="flavour-swatch">
+                        <svg viewBox="0 0 120 160" width="90" height="120">
+                            <defs>
+                                <linearGradient id="pkG" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#c8d870"/>
+                                    <stop offset="100%" stop-color="#8fb83a"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="60" cy="32" r="28" fill="url(#pkG)"/>
+                            <circle cx="42" cy="18" r="11" fill="url(#pkG)"/>
+                            <circle cx="78" cy="18" r="11" fill="url(#pkG)"/>
+                            <rect x="34" y="55" width="52" height="52" rx="10" fill="url(#pkG)"/>
+                            <rect x="22" y="58" width="16" height="36" rx="7" fill="url(#pkG)"/>
+                            <rect x="82" y="58" width="16" height="36" rx="7" fill="url(#pkG)"/>
+                            <rect x="36" y="110" width="18" height="28" rx="7" fill="url(#pkG)"/>
+                            <rect x="66" y="110" width="18" height="28" rx="7" fill="url(#pkG)"/>
+                            <line x1="50" y1="28" x2="55" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="55" y1="28" x2="50" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="65" y1="28" x2="70" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="70" y1="28" x2="65" y2="34" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                            <ellipse cx="60" cy="80" rx="14" ry="6" fill="rgba(255,255,255,0.3)"/>
                         </svg>
                     </div>
                     <h3>Pistachio Kulfi</h3>
@@ -784,21 +1232,22 @@
     </section>
 
     <!-- Offer Banner -->
-    <section class="section offer-section">
+    <section class="offer-section">
         <div class="container">
             <div class="offer-box">
                 <span class="offer-label">Pre-Order Bonus</span>
                 <h2 class="offer-title">A partnership, not just a supplier</h2>
-                <p class="offer-desc">When you partner with Blast, you're not just stocking a product — you're getting a full marketing partnership. Place a pre-order and receive a professionally produced promotional video for your store — worth £1,500 — completely free. Created by Abu, who has generated over half a billion views and driven 9 figures in revenue for his clients. Use it across your socials, in-store screens, or website to drive footfall and sales.</p>
-                <a href="#preorder" class="hero-cta">Claim Your Free Video</a>
+                <div class="offer-value">FREE £1,500 Promo Video</div>
+                <p class="offer-desc">Place a pre-order and receive a professionally produced promotional video for your store — completely free. Created by Abu, who has generated over half a billion views and driven 9 figures in revenue for his clients. Use it on your socials, in-store screens, or website to drive footfall and sales.</p>
+                <a href="#preorder" class="offer-cta">Claim Your Free Video</a>
             </div>
         </div>
     </section>
 
-    <!-- Results -->
-    <section class="section lilac-bg">
+    <!-- Retailer Results -->
+    <section class="section testimonials-section">
         <div class="container">
-            <span class="section-label">Retailer Results</span>
+            <div class="section-label-wrap"><span class="section-label">Retailer Results</span></div>
             <h2 class="section-title">What stockists are seeing</h2>
             <p class="section-desc">Early retail partners are already reporting strong results with Blast on their shelves.</p>
             <div class="testimonial-grid">
@@ -808,7 +1257,7 @@
                     <div class="testimonial-author">Convenience Store</div>
                     <div class="testimonial-location">Birmingham</div>
                     <div class="testimonial-img">
-                        <img src="birmingham-674k.png" alt="TikTok analytics showing 674K views for Birmingham convenience store delivery">
+                        <img src="birmingham-674k.png" alt="TikTok analytics showing 674K views for Birmingham convenience store">
                     </div>
                 </div>
                 <div class="testimonial-card">
@@ -817,7 +1266,7 @@
                     <div class="testimonial-author">Ferngore Corner Shop</div>
                     <div class="testimonial-location">Accrington</div>
                     <div class="testimonial-img">
-                        <img src="accrington-109k.png" alt="TikTok analytics showing 109K views for Ferngore Corner Shop delivery">
+                        <img src="accrington-109k.png" alt="TikTok analytics showing 109K views for Ferngore Corner Shop">
                     </div>
                 </div>
                 <div class="testimonial-card">
@@ -826,7 +1275,7 @@
                     <div class="testimonial-author">Akbari Supermarket</div>
                     <div class="testimonial-location">Manchester</div>
                     <div class="testimonial-img">
-                        <img src="manchester-228k.png" alt="TikTok analytics showing 228K views for Akbari Supermarket delivery">
+                        <img src="manchester-228k.png" alt="TikTok analytics showing 228K views for Akbari Supermarket">
                     </div>
                 </div>
             </div>
@@ -884,12 +1333,12 @@
                         </select>
                     </div>
                     <div class="form-submit">
-                        <a href="https://buy.stripe.com/7sYeVdesT23M1bfekh1Nu0r" target="_blank" class="btn-submit" id="payBtn" style="text-decoration:none; text-align:center;">Make Payment</a>
+                        <a href="https://buy.stripe.com/7sYeVdesT23M1bfekh1Nu0r" target="_blank" class="btn-pay" id="payBtn">Make Payment</a>
                     </div>
                     <div class="form-submit" style="margin-top:12px;">
                         <button type="submit" class="btn-submit" id="submitBtn" disabled style="opacity:0.5; cursor:not-allowed;">Submit Pre-Order</button>
                     </div>
-                    <p class="form-note">Click "Make Payment" first, then "Submit Pre-Order" to confirm your order via WhatsApp.</p>
+                    <p class="form-note">Click "Make Payment" first. Once payment is complete you'll be redirected back — then hit "Submit Pre-Order" to confirm via WhatsApp.</p>
                 </form>
             </div>
         </div>
@@ -898,6 +1347,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-logo">
+                <svg viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg"><text x="10" y="62" font-family="'Arial Rounded MT Bold','Nunito','Verdana',sans-serif" font-size="68" font-weight="900" font-style="italic" fill="rgba(255,255,255,0.85)" stroke="rgba(255,255,255,0.85)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">BLAST</text></svg>
+            </div>
             <div class="footer-brand">Blast Drinks UK</div>
             <p>@blastdrinksuk</p>
             <div class="footer-links">
@@ -928,8 +1380,8 @@
             submitBtn.disabled = false;
             submitBtn.style.opacity = '1';
             submitBtn.style.cursor = 'pointer';
-            payBtn.textContent = 'Payment Complete';
-            payBtn.style.background = '#6b7a4e';
+            payBtn.textContent = 'Payment Complete ✓';
+            payBtn.style.background = 'linear-gradient(135deg, #8fb83a, #a8c24a)';
             payBtn.style.pointerEvents = 'none';
         }
 
@@ -948,7 +1400,7 @@
             var quantity = document.getElementById('quantity').value;
 
             var message = encodeURIComponent(
-                'New Blast Drinks Pre-Order\n\n'
+                '🧸 New Blast Drinks Pre-Order\n\n'
                 + 'Name: ' + firstName + ' ' + lastName + '\n'
                 + 'Email: ' + email + '\n'
                 + 'Phone: ' + phone + '\n'
@@ -959,8 +1411,8 @@
 
             window.open('https://wa.me/447508804298?text=' + message, '_blank');
 
-            submitBtn.textContent = 'Pre-Order Sent!';
-            submitBtn.style.background = '#6b7a4e';
+            submitBtn.textContent = 'Pre-Order Sent! ✓';
+            submitBtn.style.background = 'linear-gradient(135deg, #8fb83a, #a8c24a)';
             submitBtn.disabled = true;
         });
 
@@ -973,10 +1425,10 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.reason-card, .flavour-card, .stat-item').forEach(el => {
+        document.querySelectorAll('.reason-card, .flavour-card, .stat-item, .testimonial-card').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(12px)';
-            el.style.transition = 'all 0.4s ease';
+            el.style.transform = 'translateY(16px)';
+            el.style.transition = 'all 0.5s ease';
             observer.observe(el);
         });
     </script>
